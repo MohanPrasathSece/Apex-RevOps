@@ -79,7 +79,7 @@ function ServicesHero() {
       <motion.div style={{ y }} aria-hidden className="absolute top-4 right-8 font-display italic text-[16vw] md:text-[14vw] text-ink opacity-5 leading-[0.85] select-none pointer-events-none">services</motion.div>
       <div className="relative max-w-7xl mx-auto">
         <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-6">◆ Capabilities</div>
-        <h1 className="font-display text-[clamp(3rem,9vw,9rem)] leading-[0.9] text-[var(--ink)] font-light">
+        <h1 className="font-display text-[clamp(3rem,9vw,9rem)] leading-[1.15] md:leading-[0.9] text-[var(--ink)] font-light">
           <RevealText text="Everything you need" />
           <br /><span className="italic"><RevealText text="to grow on purpose." /></span>
         </h1>
@@ -128,7 +128,7 @@ function ServicesPage() {
       <section className="py-20 px-6 bg-[var(--beige)]">
         <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 space-y-10 md:space-y-0">
           {services.map((s, i) => (
-            <div key={i} className="relative md:static">
+            <div key={i} className="sticky md:relative top-24 md:top-0 pb-10 md:pb-0">
               <Reveal delay={i * 0.05}>
                 <ServiceCard s={s} i={i} onOpen={() => setOpenIdx(i)} />
               </Reveal>

@@ -27,8 +27,9 @@ export function Hero() {
         {/* Desktop-only overlays */}
         <div className="hidden md:block absolute -top-20 -left-20 w-[700px] h-[700px] rounded-full bg-[var(--beige-light)] blur-[140px] opacity-90" />
         <div className="hidden md:block absolute -bottom-20 -right-20 w-[800px] h-[800px] rounded-full bg-[var(--beige-light)] blur-[160px] opacity-80" />
-        {/* Additional mobile white overlay */}
-        <div className="absolute inset-0 bg-white/10 md:hidden pointer-events-none" />
+        {/* Additional mobile white overlay for better readability */}
+        <div className="absolute inset-0 bg-white/30 md:hidden pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/40 to-transparent md:hidden pointer-events-none" />
       </motion.div>
 
       <div className="absolute inset-0 grain pointer-events-none" />
