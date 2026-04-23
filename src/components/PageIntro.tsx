@@ -14,8 +14,8 @@ export function PageIntro() {
           initial={{ y: 0 }}
           animate={{ y: 0 }}
           exit={{ y: "-100%" }}
-          transition={{ duration: 1.0, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-[200] bg-[var(--ink)] flex items-center justify-center overflow-hidden"
+          transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+          className="fixed inset-0 z-[200] bg-[var(--ink)] flex items-center justify-center overflow-hidden will-change-transform"
         >
           <div className="absolute inset-0 noise-bg opacity-[0.06] pointer-events-none" />
           <div className="relative text-center">

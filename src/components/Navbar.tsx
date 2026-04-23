@@ -22,11 +22,11 @@ export function Navbar() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 2.0 }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? "py-2" : "py-4"}`}
+      className={`fixed top-0 inset-x-0 z-50 transition-[padding] duration-500 ${scrolled ? "py-2" : "py-4"}`}
     >
       <div className="mx-auto max-w-7xl px-6">
         <div
-          className={`flex items-center justify-between rounded-full px-5 py-1.5 transition-all duration-500 ${
+          className={`flex items-center justify-between rounded-full px-5 py-1.5 transition-[background-color,box-shadow] duration-500 ${
             scrolled ? "glass shadow-soft" : ""
           }`}
         >
@@ -73,10 +73,12 @@ export function Navbar() {
         <AnimatePresence>
           {open && (
             <motion.div
-              initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
-              animate={{ opacity: 1, backdropFilter: "blur(24px)" }}
-              exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-              className="fixed inset-0 z-50 bg-[var(--beige)]/80 lg:hidden flex flex-col items-start justify-center px-10 gap-8"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="fixed inset-0 z-50 bg-[var(--beige)] lg:hidden flex flex-col items-start justify-center px-10 gap-8 will-change-transform"
+              style={{ backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)" }}
             >
               <button 
                 onClick={() => setOpen(false)} 
@@ -98,12 +100,21 @@ export function Navbar() {
                       to={l.to}
                       activeOptions={{ exact: true }}
                       onClick={() => { setOpen(false); window.scrollTo(0, 0); }}
-                      className="group transition-all"
+                      className="group flex items-center gap-4"
                     >
                       {({ isActive }) => (
-                        <span className={`font-display text-5xl ${isActive ? "text-[var(--ink)]/60" : "text-[var(--ink)]"}`}>
-                          {l.label}
-                        </span>
+                        <>
+                          <span className="font-display text-5xl text-[var(--ink)]">
+                            {l.label}
+                          </span>
+                          {isActive && (
+                            <motion.div 
+                              layoutId="activeDot"
+                              className="w-2.5 h-2.5 rounded-full bg-[var(--ink)]"
+                              transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                            />
+                          )}
+                        </>
                       )}
                     </Link>
                   </motion.div>

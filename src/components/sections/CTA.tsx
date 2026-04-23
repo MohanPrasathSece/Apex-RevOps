@@ -12,7 +12,8 @@ export function CTA() {
     offset: ["start end", "end start"]
   });
   
-  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const y = useTransform(scrollYProgress, [0, 1], ["-20%", isMobile ? "-20%" : "20%"]);
 
   let content = {
     bgWord: "scale",
