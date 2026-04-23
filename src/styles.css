@@ -194,14 +194,26 @@
     pointer-events: none;
     opacity: 0.4;
   }
-  .marquee { animation: marquee 40s linear infinite; }
+  .marquee { 
+    animation: marquee 40s linear infinite; 
+    will-change: transform;
+  }
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
-  .col-up-slow { animation: col-up 20s linear infinite; }
-  .col-up-mid { animation: col-up 14s linear infinite; }
-  .col-up-fast { animation: col-up 10s linear infinite; }
+  .col-up-slow { 
+    animation: col-up 20s linear infinite; 
+    will-change: transform;
+  }
+  .col-up-mid { 
+    animation: col-up 14s linear infinite; 
+    will-change: transform;
+  }
+  .col-up-fast { 
+    animation: col-up 10s linear infinite; 
+    will-change: transform;
+  }
   @keyframes col-up {
     from { transform: translateY(0); }
     to { transform: translateY(-50%); }

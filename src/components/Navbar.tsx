@@ -16,6 +16,21 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const { scrollY } = useScroll();
   useMotionValueEvent(scrollY, "change", (v) => setScrolled(v > 30));
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = 'unset';
+      document.body.style.touchAction = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+      document.body.style.touchAction = 'unset';
+    };
+  }, [open]);
+
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   return (

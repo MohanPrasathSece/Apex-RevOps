@@ -44,9 +44,7 @@ export function StackedCards() {
   return (
     <section className="pt-4 pb-20 md:py-32 px-6 bg-[var(--beige)]">
       <div className="max-w-6xl mx-auto">
-        <div className="md:hidden mb-16">
-          <GlobeInteractive className="w-full max-w-[300px] mx-auto opacity-40" />
-        </div>
+        {/* Removed GlobeInteractive on mobile for performance */}
         <Reveal>
           <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-4">◆ The process</div>
           <h2 className="font-display text-5xl md:text-8xl text-[var(--ink)] max-w-3xl leading-[0.95] mb-20 font-light">
