@@ -95,12 +95,12 @@ export function HorizontalServices() {
   const labelY = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
   return (
-    <section ref={ref} className="relative py-32 px-6 bg-[var(--beige)]">
+    <section ref={ref} className="relative py-20 md:py-32 px-6 bg-[var(--beige)]">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-16 md:mb-24">
           <Reveal>
             <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-4">◆ Capabilities</div>
-            <h2 className="font-display text-5xl md:text-8xl text-[var(--ink)] leading-[0.95] font-light">
+            <h2 className="font-display text-4xl md:text-8xl text-[var(--ink)] leading-[0.95] font-light">
               A full-stack <br/><span className="italic">revenue engine.</span>
             </h2>
           </Reveal>

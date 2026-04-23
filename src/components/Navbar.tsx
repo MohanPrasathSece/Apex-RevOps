@@ -31,7 +31,7 @@ export function Navbar() {
           }`}
         >
           <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-3 group">
-            <img src={logo} alt="Apex" width={64} height={64} className="w-16 h-16 object-contain" />
+            <img src={logo} alt="Apex" width={64} height={64} className="w-12 md:w-16 h-12 md:h-16 object-contain" />
             <div className="leading-tight">
               <div className="font-display text-2xl text-[var(--ink)] font-medium tracking-tight">Apex<span className="italic">RevOps</span></div>
             </div>

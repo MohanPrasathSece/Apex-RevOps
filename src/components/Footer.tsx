@@ -15,7 +15,7 @@ export function Footer() {
           className="grid md:grid-cols-12 gap-12 pb-16 border-b border-[var(--beige-light)]/15"
         >
           <div className="md:col-span-6">
-            <h2 className="font-display text-5xl md:text-8xl leading-[0.9] text-[var(--beige-light)] font-light">
+            <h2 className="font-display text-4xl md:text-8xl leading-[0.9] text-[var(--beige-light)] font-light">
               Let's build<br /><span className="italic">your edge.</span>
             </h2>
             <Link

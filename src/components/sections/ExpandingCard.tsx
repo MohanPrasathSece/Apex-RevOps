@@ -10,11 +10,11 @@ export function ExpandingCard() {
   const imgY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
 
   return (
-    <section ref={ref} className="relative pt-32 bg-[var(--beige)]">
+    <section ref={ref} className="relative pt-20 md:pt-32 bg-[var(--beige)]">
       <div className="max-w-7xl mx-auto px-6 mb-16">
         <Reveal>
           <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-4">◆ Philosophy</div>
-          <h2 className="font-display text-5xl md:text-8xl text-[var(--ink)] max-w-4xl leading-[0.95] font-light">
+          <h2 className="font-display text-4xl md:text-8xl text-[var(--ink)] max-w-4xl leading-[0.95] font-light">
             Less noise. <span className="italic">More revenue.</span>
           </h2>
         </Reveal>
@@ -27,7 +27,7 @@ export function ExpandingCard() {
         <motion.div style={{ y: imgY }} className="absolute inset-0 opacity-[0.06] noise-bg" />
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[var(--beige)]/5 to-transparent" />
 
-        <div className="relative px-6 md:px-20 py-32 md:py-48 grid md:grid-cols-12 gap-12 items-end">
+        <div className="relative px-6 md:px-20 py-20 md:py-48 grid md:grid-cols-12 gap-12 items-end">
           <div className="md:col-span-7">
             <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--beige-light)]/50 mb-8">
               ◆ Our promise

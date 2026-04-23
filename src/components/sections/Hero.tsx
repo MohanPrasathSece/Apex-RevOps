@@ -12,7 +12,7 @@ export function Hero() {
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden bg-[var(--beige)]">
+    <section ref={ref} className="relative min-h-[90vh] md:min-h-screen flex items-center pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden bg-[var(--beige)]">
       <motion.div style={{ y: bgY }} className="pointer-events-none absolute inset-0">
         <img 
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" 
@@ -48,7 +48,7 @@ export function Hero() {
           </div>
         </motion.div>
 
-        <h1 className="font-display text-[clamp(3.2rem,11vw,11rem)] leading-[0.88] text-[var(--ink)] font-light">
+        <h1 className="font-display text-[clamp(2.5rem,10vw,11rem)] leading-[0.9] text-[var(--ink)] font-light">
           <RevealText text="Growth" />
           <br />
           <span className="italic font-normal">

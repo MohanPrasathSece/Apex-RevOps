@@ -17,7 +17,7 @@ export function Stats() {
   const wordY = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
   return (
-    <section ref={ref} className="relative py-32 bg-[var(--beige-light)]">
+    <section ref={ref} className="relative py-20 md:py-32 bg-[var(--beige-light)]">
       {/* huge parallax word */}
       <motion.div
         style={{ y: wordY }}
@@ -32,7 +32,7 @@ export function Stats() {
           <div className="lg:col-span-7">
             <Reveal>
               <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-4">◆ Track record</div>
-              <h2 className="font-display text-5xl md:text-7xl text-[var(--ink)] max-w-3xl leading-[0.95] font-light">
+              <h2 className="font-display text-4xl md:text-7xl text-[var(--ink)] max-w-3xl leading-[0.95] font-light">
                 Numbers we've earned, <span className="italic">slowly.</span>
               </h2>
             </Reveal>
