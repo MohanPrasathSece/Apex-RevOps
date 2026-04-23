@@ -24,9 +24,9 @@ export function Hero() {
           alt="" 
           className="w-full h-full object-cover opacity-30 md:opacity-40"
         />
-        {/* Mobile-enhanced overlays */}
-        <div className="absolute -top-20 -left-20 w-[300px] md:w-[700px] h-[300px] md:h-[700px] rounded-full bg-[var(--beige-light)] blur-[60px] md:blur-[140px] opacity-100 md:opacity-90" />
-        <div className="absolute -bottom-20 -right-20 w-[350px] md:w-[800px] h-[350px] md:h-[800px] rounded-full bg-[var(--beige-light)] blur-[80px] md:blur-[160px] opacity-100 md:opacity-80" />
+        {/* Desktop-only overlays */}
+        <div className="hidden md:block absolute -top-20 -left-20 w-[700px] h-[700px] rounded-full bg-[var(--beige-light)] blur-[140px] opacity-90" />
+        <div className="hidden md:block absolute -bottom-20 -right-20 w-[800px] h-[800px] rounded-full bg-[var(--beige-light)] blur-[160px] opacity-80" />
         {/* Additional mobile white overlay */}
         <div className="absolute inset-0 bg-white/10 md:hidden pointer-events-none" />
       </motion.div>

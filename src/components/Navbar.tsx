@@ -18,16 +18,20 @@ export function Navbar() {
   useMotionValueEvent(scrollY, "change", (v) => setScrolled(v > 30));
 
   useEffect(() => {
+    const main = document.querySelector('main');
     if (open) {
       document.body.style.overflow = 'hidden';
       document.body.style.touchAction = 'none';
+      if (main) main.style.visibility = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
       document.body.style.touchAction = 'unset';
+      if (main) main.style.visibility = 'visible';
     }
     return () => {
       document.body.style.overflow = 'unset';
       document.body.style.touchAction = 'unset';
+      if (main) main.style.visibility = 'visible';
     };
   }, [open]);
 

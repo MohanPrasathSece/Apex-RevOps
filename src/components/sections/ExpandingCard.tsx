@@ -23,7 +23,7 @@ export function ExpandingCard() {
       </div>
 
       <motion.div
-        style={{ scale, borderRadius: radius }}
+        {...(!isMobile ? { style: { scale, borderRadius: radius } } : {})}
         className="relative mx-auto overflow-hidden bg-[var(--ink)] shadow-soft"
       >
         <motion.div style={{ y: imgY }} className="absolute inset-0 opacity-[0.06] noise-bg" />

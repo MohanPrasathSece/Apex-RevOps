@@ -68,6 +68,9 @@ function MobileCard({ s, i }: { s: typeof services[number]; i: number }) {
 }
 
 function Row({ s, i }: { s: typeof services[number]; i: number }) {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  if (isMobile) return null;
+
   const ref = useRef<HTMLDivElement>(null);
   const [hover, setHover] = useState(false);
   const [arrowHover, setArrowHover] = useState(false);
