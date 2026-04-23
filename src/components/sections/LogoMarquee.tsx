@@ -44,34 +44,23 @@ export function LogoMarquee() {
       </div>
       
       <div className="relative">
-        {/* Mobile: Static Grid for performance */}
-        <div className="md:hidden grid grid-cols-3 gap-8 items-center px-6 grayscale opacity-60">
-          {brands.slice(0, 9).map((brand, i) => (
-            <div key={i} className="flex items-center justify-center">
-              <img src={brand.logo} alt={brand.name} className="h-6 w-auto object-contain" />
+        {/* Faded edges */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[var(--beige-light)] to-transparent z-10" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[var(--beige-light)] to-transparent z-10" />
+        
+        <div className="flex gap-20 marquee w-max items-center py-4">
+          {loop.map((brand, i) => (
+            <div 
+              key={i} 
+              className="group flex items-center justify-center grayscale-0 md:grayscale opacity-100 md:opacity-40 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-500"
+            >
+              <img 
+                src={brand.logo} 
+                alt={brand.name} 
+                className="h-8 md:h-10 w-auto object-contain max-w-[160px]"
+              />
             </div>
           ))}
-        </div>
-
-        {/* Desktop: Animated Marquee */}
-        <div className="hidden md:block">
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[var(--beige-light)] to-transparent z-10" />
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[var(--beige-light)] to-transparent z-10" />
-          
-          <div className="flex gap-20 marquee w-max items-center py-4">
-            {loop.map((brand, i) => (
-              <div 
-                key={i} 
-                className="group flex items-center justify-center grayscale-0 md:grayscale opacity-100 md:opacity-40 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-500"
-              >
-                <img 
-                  src={brand.logo} 
-                  alt={brand.name} 
-                  className="h-8 md:h-10 w-auto object-contain max-w-[160px]"
-                />
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
