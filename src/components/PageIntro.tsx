@@ -3,10 +3,18 @@ import { useEffect, useState } from "react";
 
 export function PageIntro() {
   const [done, setDone] = useState(false);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   useEffect(() => {
+    if (isMobile) {
+      setDone(true);
+      return;
+    }
     const t = setTimeout(() => setDone(true), 1800);
     return () => clearTimeout(t);
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) return null;
   return (
     <AnimatePresence>
       {!done && (

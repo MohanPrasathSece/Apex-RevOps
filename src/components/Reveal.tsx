@@ -9,8 +9,9 @@ type Props = {
 };
 
 export function Reveal({ children, delay = 0, y = 40, className }: Props) {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const variants: Variants = {
-    hidden: { opacity: 0, y },
+    hidden: { opacity: isMobile ? 1 : 0, y: isMobile ? 0 : y },
     show: {
       opacity: 1,
       y: 0,
@@ -19,7 +20,7 @@ export function Reveal({ children, delay = 0, y = 40, className }: Props) {
   };
   return (
     <motion.div
-      initial="hidden"
+      initial={isMobile ? "show" : "hidden"}
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
       variants={variants}
@@ -38,13 +39,13 @@ export function RevealText({ text, className }: { text: string; className?: stri
       {words.map((w, i) => (
         <span key={i} className="inline-block align-bottom mr-[0.25em]">
           <motion.span
-            initial={{ y: 20, opacity: 0 }}
+            initial={isMobile ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ 
-              duration: isMobile ? 0.4 : 0.5, 
+              duration: isMobile ? 0 : 0.5, 
               ease: [0.22, 1, 0.36, 1], 
-              delay: isMobile ? (i * 0.02) : (i * 0.04) 
+              delay: isMobile ? 0 : (i * 0.04) 
             }}
             className="inline-block"
           >
