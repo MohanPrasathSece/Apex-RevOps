@@ -35,17 +35,21 @@ export function Hero() {
 
       {/* horizon line */}
       <motion.div
-        initial={isMobile ? { scaleX: 1 } : { scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 1.4, delay: isMobile ? 0 : 2.0, ease: [0.76, 0, 0.24, 1] }}
+        {...(!isMobile ? {
+          initial: { scaleX: 0 },
+          animate: { scaleX: 1 },
+          transition: { duration: 1.4, delay: 2.0, ease: [0.76, 0, 0.24, 1] }
+        } : {})}
         className="absolute left-6 right-6 top-32 h-px bg-[var(--ink)]/20 origin-left z-10"
       />
 
       <motion.div style={{ y, opacity }} className="relative max-w-7xl mx-auto px-6 w-full z-20">
         <motion.div
-          initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: isMobile ? 0 : 2.0 }}
+          {...(!isMobile ? {
+            initial: { opacity: 0, y: 12 },
+            animate: { opacity: 1, y: 0 },
+            transition: { duration: 0.8, delay: 2.0 }
+          } : {})}
           className="flex items-center justify-between mb-12"
         >
           <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)]">
@@ -66,9 +70,11 @@ export function Hero() {
 
         <div className="mt-12 grid md:grid-cols-12 gap-10 items-end">
           <motion.p
-            initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: isMobile ? 0 : 2.3 }}
+            {...(!isMobile ? {
+              initial: { opacity: 0, y: 20 },
+              animate: { opacity: 1, y: 0 },
+              transition: { duration: 0.8, delay: 2.3 }
+            } : {})}
             className="md:col-span-5 text-base md:text-lg text-[var(--ink-soft)] leading-relaxed max-w-md"
           >
             A boutique B2B revenue studio engineering precision lead generation,
@@ -76,9 +82,11 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: isMobile ? 0 : 2.4 }}
+            {...(!isMobile ? {
+              initial: { opacity: 0, y: 20 },
+              animate: { opacity: 1, y: 0 },
+              transition: { duration: 0.8, delay: 2.4 }
+            } : {})}
             className="md:col-span-7 flex flex-wrap items-center gap-4 md:justify-end"
           >
             <MagneticButton href="/contact">Schedule a meeting</MagneticButton>
