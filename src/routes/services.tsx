@@ -141,27 +141,46 @@ function ServicesPage() {
 
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setOpenIdx(null)}
-            className="fixed inset-0 z-[60] bg-[var(--ink)]/60 backdrop-blur-md flex items-center justify-center p-6"
-          >
+          <>
+            {/* Backdrop */}
             <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 30 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 200, damping: 25 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setOpenIdx(null)}
+              className="fixed inset-0 z-[60] bg-[var(--ink)]/60 backdrop-blur-md"
+            />
+            
+            {/* Modal / Bottom Sheet */}
+            <motion.div
+              initial={isMobile ? { y: "100%" } : { scale: 0.9, opacity: 0, y: 30 }}
+              animate={isMobile ? { y: "0%" } : { scale: 1, opacity: 1, y: 0 }}
+              exit={isMobile ? { y: "100%" } : { scale: 0.95, opacity: 0 }}
+              transition={{ type: "spring", stiffness: isMobile ? 300 : 200, damping: isMobile ? 32 : 25 }}
+              drag={isMobile ? "y" : false}
+              dragConstraints={{ top: 0, bottom: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(_, info) => {
+                if (info.offset.y > 100) setOpenIdx(null);
+              }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-3xl bg-[var(--beige-light)] rounded-[2rem] p-10 md:p-14 shadow-gold border border-[var(--ink)]/20 overflow-hidden"
+              className={`fixed z-[70] bg-[var(--beige-light)] shadow-gold border-[var(--ink)]/20 overflow-hidden 
+                ${isMobile 
+                  ? "inset-x-0 bottom-0 rounded-t-[2.5rem] p-10 pt-12 pb-16 h-[85vh] overflow-y-auto" 
+                  : "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl rounded-[2rem] p-10 md:p-14"
+                }`}
             >
+              {isMobile && (
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-[var(--ink)]/10 rounded-full" />
+              )}
+              
               <button
                 onClick={() => setOpenIdx(null)}
                 className="absolute top-6 right-6 w-10 h-10 rounded-full bg-[var(--ink)] text-[var(--beige-light)] flex items-center justify-center z-10"
               >
                 <X className="w-4 h-4" />
               </button>
+              
               <div className="relative">
                 <div className="w-14 h-14 rounded-2xl bg-[var(--ink)] flex items-center justify-center text-[var(--beige-light)]">
                   <open.icon className="w-6 h-6" />
@@ -181,7 +200,7 @@ function ServicesPage() {
                 </div>
               </div>
             </motion.div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
