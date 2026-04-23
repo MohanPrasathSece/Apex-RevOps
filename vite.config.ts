@@ -11,4 +11,8 @@ export default defineConfig({
     react(),
     tsconfigPaths(),
   ],
+  server: {
+    port: 8080,
+    strictPort: true,
+  },
 });
