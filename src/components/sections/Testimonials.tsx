@@ -50,12 +50,15 @@ export function Testimonials() {
       </div>
 
       <div className="relative h-[80vh] [mask-image:linear-gradient(180deg,transparent,black_12%,black_88%,transparent)]">
-        {/* Mobile View: Infinite Scroll Loop */}
-        <div className="md:hidden relative overflow-hidden h-full">
-          <div className="flex flex-col gap-6 col-up-slow">
-            {[...items, ...items].map((t, j) => (
-              <Card key={`mobile-${j}`} t={t} />
-            ))}
+        {/* Mobile View: Static stack for performance */}
+        <div className="md:hidden flex flex-col gap-6">
+          {items.slice(0, 3).map((t, j) => (
+            <Card key={`mobile-${j}`} t={t} />
+          ))}
+          <div className="text-center mt-4">
+            <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--ink-soft)] opacity-60">
+              + {items.length - 3} more testimonials
+            </span>
           </div>
         </div>
 

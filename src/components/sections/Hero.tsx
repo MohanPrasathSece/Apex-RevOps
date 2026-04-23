@@ -20,7 +20,7 @@ export function Hero() {
     <section ref={ref} className="relative min-h-screen flex items-center pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden bg-[var(--beige)]">
       <motion.div style={{ y: bgY }} className="pointer-events-none absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" 
+          src={`https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=${isMobile ? 800 : 2069}&auto=format&fit=crop`} 
           alt="" 
           className="w-full h-full object-cover opacity-30 md:opacity-40"
         />
