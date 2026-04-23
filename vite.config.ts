@@ -12,7 +12,7 @@ export default defineConfig({
     tsconfigPaths(),
   ],
   server: {
-    port: 8081,
+    port: 8888,
     strictPort: true,
   },
 });
