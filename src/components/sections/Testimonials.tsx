@@ -48,7 +48,17 @@ export function Testimonials() {
       </div>
 
       <div className="relative h-[80vh] [mask-image:linear-gradient(180deg,transparent,black_12%,black_88%,transparent)]">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto h-full">
+        {/* Mobile View: Single Column */}
+        <div className="md:hidden relative overflow-hidden h-full">
+          <div className="flex flex-col gap-6 col-up-slow">
+            {[...items, ...items].map((t, j) => (
+              <Card key={`mobile-${j}`} t={t} />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop View: Three Columns */}
+        <div className="hidden md:grid grid-cols-3 gap-6 max-w-7xl mx-auto h-full">
           {cols.map((col, i) => (
             <div key={i} className="relative overflow-hidden h-full">
               <div className={`flex flex-col gap-6 ${col.speed}`}>

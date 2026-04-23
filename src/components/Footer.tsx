@@ -15,13 +15,13 @@ export function Footer() {
           className="grid md:grid-cols-12 gap-12 pb-16 border-b border-[var(--beige-light)]/15"
         >
           <div className="md:col-span-6">
-            <h2 className="font-display text-4xl md:text-8xl leading-[0.9] text-[var(--beige-light)] font-light">
+            <h2 className="hidden md:block font-display text-4xl md:text-8xl leading-[0.9] text-[var(--beige-light)] font-light">
               Let's build<br /><span className="italic">your edge.</span>
             </h2>
             <Link
               to="/contact"
               onClick={() => window.scrollTo(0, 0)}
-              className="inline-flex items-center gap-2 mt-10 px-7 py-4 rounded-full bg-[var(--beige-light)] text-[var(--ink)] font-medium hover:shadow-glow transition-shadow"
+              className="hidden md:inline-flex items-center gap-2 mt-10 px-7 py-4 rounded-full bg-[var(--beige-light)] text-[var(--ink)] font-medium hover:shadow-glow transition-shadow"
             >
               Schedule a meeting <ArrowUpRight className="w-4 h-4" />
             </Link>

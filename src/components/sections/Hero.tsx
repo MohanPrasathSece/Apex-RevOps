@@ -12,15 +12,18 @@ export function Hero() {
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
-    <section ref={ref} className="relative min-h-[90vh] md:min-h-screen flex items-center pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden bg-[var(--beige)]">
+    <section ref={ref} className="relative min-h-screen flex items-center pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden bg-[var(--beige)]">
       <motion.div style={{ y: bgY }} className="pointer-events-none absolute inset-0">
         <img 
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" 
           alt="" 
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-30 md:opacity-40"
         />
-        <div className="absolute -top-40 -left-32 w-[700px] h-[700px] rounded-full bg-[var(--beige-light)] blur-[140px] opacity-90" />
-        <div className="absolute -bottom-40 -right-40 w-[800px] h-[800px] rounded-full bg-[var(--beige-light)] blur-[160px] opacity-80" />
+        {/* Mobile-enhanced overlays */}
+        <div className="absolute -top-20 -left-20 w-[400px] md:w-[700px] h-[400px] md:h-[700px] rounded-full bg-[var(--beige-light)] blur-[100px] md:blur-[140px] opacity-100 md:opacity-90" />
+        <div className="absolute -bottom-20 -right-20 w-[450px] md:w-[800px] h-[450px] md:h-[800px] rounded-full bg-[var(--beige-light)] blur-[120px] md:blur-[160px] opacity-100 md:opacity-80" />
+        {/* Additional mobile white overlay */}
+        <div className="absolute inset-0 bg-white/10 md:hidden pointer-events-none" />
       </motion.div>
 
       <div className="absolute inset-0 grain pointer-events-none" />

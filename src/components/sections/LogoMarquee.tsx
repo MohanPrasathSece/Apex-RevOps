@@ -51,7 +51,7 @@ export function LogoMarquee() {
           {loop.map((brand, i) => (
             <div 
               key={i} 
-              className="group flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+              className="group flex items-center justify-center grayscale-0 md:grayscale opacity-100 md:opacity-40 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-500"
             >
               <img 
                 src={brand.logo} 

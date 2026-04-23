@@ -55,6 +55,15 @@ function ServiceCard({ s, i, onOpen }: { s: typeof services[number]; i: number; 
           <p className="mt-4 text-[var(--ink-soft)] group-hover:text-[var(--beige-light)]/70 text-base leading-relaxed transition-colors duration-500">
             {s.short}
           </p>
+          
+          <div className="mt-6 space-y-2 md:hidden">
+            {s.bullets.map((b, j) => (
+              <div key={j} className="flex items-center gap-3 text-sm text-[var(--ink)]">
+                <div className="w-1.5 h-1.5 rounded-full bg-[var(--ink)]/40" />
+                {b}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>
@@ -117,11 +126,13 @@ function ServicesPage() {
       <ServicesHero />
 
       <section className="py-20 px-6 bg-[var(--beige)]">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 space-y-10 md:space-y-0">
           {services.map((s, i) => (
-            <Reveal key={i} delay={i * 0.05}>
-              <ServiceCard s={s} i={i} onOpen={() => setOpenIdx(i)} />
-            </Reveal>
+            <div key={i} className="sticky top-24 md:static">
+              <Reveal delay={i * 0.05}>
+                <ServiceCard s={s} i={i} onOpen={() => setOpenIdx(i)} />
+              </Reveal>
+            </div>
           ))}
         </div>
       </section>

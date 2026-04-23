@@ -73,28 +73,50 @@ export function Navbar() {
         <AnimatePresence>
           {open && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="lg:hidden mt-3 glass rounded-3xl p-6 flex flex-col gap-2"
+              initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+              animate={{ opacity: 1, backdropFilter: "blur(24px)" }}
+              exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+              className="fixed inset-0 z-50 bg-[var(--beige)]/80 lg:hidden flex flex-col items-start justify-center px-10 gap-8"
             >
-              {links.map((l) => (
-                <Link
-                  key={l.to}
-                  to={l.to}
-                  onClick={() => { setOpen(false); window.scrollTo(0, 0); }}
-                  className="text-[var(--ink)] py-2 font-display text-2xl"
-                >
-                  {l.label}
-                </Link>
-              ))}
-              <Link
-                to="/contact"
-                onClick={() => { setOpen(false); window.scrollTo(0, 0); }}
-                className="mt-2 text-center px-5 py-3 rounded-full bg-[var(--ink)] text-[var(--beige-light)]"
+              <button 
+                onClick={() => setOpen(false)} 
+                className="absolute top-8 right-6 text-[var(--ink)] p-2"
+                aria-label="Close"
               >
-                Schedule Meeting
-              </Link>
+                <X className="w-8 h-8" />
+              </button>
+
+              <div className="flex flex-col gap-6 w-full">
+                {links.map((l, i) => (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + i * 0.1 }}
+                    key={l.to}
+                  >
+                    <Link
+                      to={l.to}
+                      onClick={() => { setOpen(false); window.scrollTo(0, 0); }}
+                      className="text-[var(--ink)] font-display text-5xl hover:italic transition-all"
+                    >
+                      {l.label}
+                    </Link>
+                  </motion.div>
+                ))}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + links.length * 0.1 }}
+                >
+                  <Link
+                    to="/contact"
+                    onClick={() => { setOpen(false); window.scrollTo(0, 0); }}
+                    className="mt-4 inline-block px-8 py-4 rounded-full bg-[var(--ink)] text-[var(--beige-light)] font-medium text-lg shadow-soft"
+                  >
+                    Schedule Meeting
+                  </Link>
+                </motion.div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

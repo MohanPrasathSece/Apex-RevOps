@@ -12,8 +12,9 @@ const steps = [
 function Card({ i, total, item }: { i: number; total: number; item: typeof steps[number] }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "start start"] });
-  const scale = useTransform(scrollYProgress, [0, 1], [0.92, 1]);
-  const rot = useTransform(scrollYProgress, [0, 1], [-2, 0]);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const scale = useTransform(scrollYProgress, [0, 1], [isMobile ? 0.98 : 0.92, 1]);
+  const rot = useTransform(scrollYProgress, [0, 1], [isMobile ? -1 : -2, 0]);
   return (
     <div ref={ref} className="sticky" style={{ top: `${100 + i * 28}px` }}>
       <motion.div

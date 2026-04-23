@@ -13,8 +13,8 @@ const metrics = [
 
 export function Stats() {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const wordY = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const wordY = useTransform(scrollYProgress, [0, 1], ["0%", isMobile ? "-15%" : "-30%"]);
 
   return (
     <section ref={ref} className="relative py-20 md:py-32 bg-[var(--beige-light)]">
