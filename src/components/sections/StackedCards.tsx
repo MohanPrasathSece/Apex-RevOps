@@ -16,7 +16,7 @@ function Card({ i, total, item }: { i: number; total: number; item: typeof steps
   const scale = useTransform(scrollYProgress, [0, 1], [isMobile ? 0.98 : 0.92, 1]);
   const rot = useTransform(scrollYProgress, [0, 1], [isMobile ? -1 : -2, 0]);
   return (
-    <div ref={ref} className="sticky" style={{ top: `${100 + i * 28}px` }}>
+    <div ref={ref} style={{ top: isMobile ? '0' : `${100 + i * 28}px`, position: isMobile ? 'relative' : 'sticky' }}>
       <motion.div
         style={{ scale, rotate: rot }}
         className="relative bg-[var(--beige-light)] rounded-[2rem] p-10 md:p-16 shadow-soft border border-[var(--ink)]/10 overflow-hidden"

@@ -9,24 +9,16 @@ declare global {
 }
 
 export function SmoothScroll() {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation();  useEffect(() => {
+    const isMobile = typeof window !== 'undefined' && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (isMobile) return;
 
-  useEffect(() => {
     const lenis = new Lenis({
       duration: 0.8,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      touchMultiplier: 2, // Optional: adjust touch sensitivity if needed
     });
     
-    // Check if it's mobile to potentially disable or adjust
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    if (isMobile) {
-      // On mobile, we might want to disable smooth scrolling entirely if the user prefers "normal scroll"
-      // or just let the browser handle it.
-      // For Lenis, we can stop it.
-    }
-
     let raf = 0;
     const loop = (time: number) => {
       lenis.raf(time);

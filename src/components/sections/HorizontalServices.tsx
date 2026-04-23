@@ -45,7 +45,7 @@ const services = [
 
 function MobileCard({ s, i }: { s: typeof services[number]; i: number }) {
   return (
-    <div className="sticky top-24 mb-10 w-full md:hidden">
+    <div className="relative mb-10 w-full md:hidden">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

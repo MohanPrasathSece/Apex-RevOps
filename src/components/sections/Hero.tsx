@@ -9,7 +9,8 @@ export function Hero() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 180]);
   const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", isMobile ? "0%" : "30%"]);
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden bg-[var(--beige)]">

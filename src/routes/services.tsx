@@ -128,7 +128,7 @@ function ServicesPage() {
       <section className="py-20 px-6 bg-[var(--beige)]">
         <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 space-y-10 md:space-y-0">
           {services.map((s, i) => (
-            <div key={i} className="sticky top-24 md:static">
+            <div key={i} className="relative md:static">
               <Reveal delay={i * 0.05}>
                 <ServiceCard s={s} i={i} onOpen={() => setOpenIdx(i)} />
               </Reveal>
