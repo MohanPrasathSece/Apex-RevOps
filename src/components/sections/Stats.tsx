@@ -59,7 +59,7 @@ export function Stats() {
               ))}
             </div>
           </div>
-          <div className="lg:col-span-5 flex items-center justify-center relative lg:translate-x-12 lg:translate-y-40 mt-16 lg:mt-0">
+          <div className="hidden lg:flex lg:col-span-5 items-center justify-center relative lg:translate-x-12 lg:translate-y-40 mt-16 lg:mt-0">
             <GlobeInteractive className="w-full max-w-[500px]" />
           </div>
         </div>

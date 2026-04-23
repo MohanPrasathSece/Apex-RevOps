@@ -45,7 +45,7 @@ export function CTA() {
       <motion.div 
         style={{ y }} 
         aria-hidden 
-        className="absolute top-0 left-8 font-display italic text-[14vw] md:text-[12vw] text-ink opacity-5 leading-none select-none pointer-events-none"
+        className="absolute top-16 md:top-0 left-8 font-display italic text-[14vw] md:text-[12vw] text-ink opacity-5 leading-none select-none pointer-events-none"
       >
         {content.bgWord}
       </motion.div>

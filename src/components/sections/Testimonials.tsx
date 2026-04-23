@@ -1,25 +1,27 @@
 import { Reveal } from "../Reveal";
 
 const items = [
-  { q: "Apex rebuilt our outbound from zero. Within 60 days we had 23 qualified meetings on the calendar.", a: "Sarah Chen", r: "VP Sales · Vertex AI" },
-  { q: "The cleanest, most thoughtful B2B agency we've worked with. They obsess over the details we miss.", a: "Marcus Webb", r: "CEO · Northwind Labs" },
-  { q: "Our reply rate jumped from 1.4% to 11%. The copy alone paid for the engagement five times over.", a: "Priya Raman", r: "CMO · Halo Systems" },
-  { q: "They don't act like a vendor. They act like our revenue team.", a: "Diego Alvarez", r: "Founder · Cumulus" },
-  { q: "AI workflows they built save my SDRs 14 hours a week. Game-changing.", a: "Nina Kowalski", r: "Head of GTM · Forge" },
-  { q: "We replaced three vendors with Apex. Pipeline is up, costs are down.", a: "Tomás Riviera", r: "COO · Meridian" },
-  { q: "The strategic clarity in their first audit alone was worth the year.", a: "Hannah Brooks", r: "VP Marketing · Aurum" },
-  { q: "Quietly the best operators we've hired. They ship without drama.", a: "Kenji Watanabe", r: "Founder · Obelisk" },
-  { q: "Pipeline that compounds. Reporting we actually understand.", a: "Lila Park", r: "Revenue Lead · Parallax" },
+  { q: "Apex rebuilt our entire outbound infrastructure from the ground up. Within just 60 days of launching our new sequences, we had 23 highly qualified meetings on the calendar and a pipeline that was finally moving in the right direction.", a: "Sarah Chen", r: "VP Sales · Vertex AI" },
+  { q: "The cleanest, most thoughtful B2B agency we've worked with. They obsess over the tiny details that most people miss, and it shows in the results. Our ROI has been consistent and impressive since day one.", a: "Marcus Webb", r: "CEO · Northwind Labs" },
+  { q: "Our reply rate jumped from a stagnant 1.4% to a staggering 11%. The copy alone paid for the entire engagement five times over within the first quarter. Truly a category-defining revenue studio.", a: "Priya Raman", r: "CMO · Halo Systems" },
+  { q: "They don't act like a vendor. They act like a core part of our revenue team. Their strategic insights during our first audit were enough to pivot our entire GTM strategy toward profitability.", a: "Diego Alvarez", r: "Founder · Cumulus" },
+  { q: "The AI workflows they built save my SDRs over 14 hours of manual labor every week. It's game-changing technology paired with deep sales expertise. We couldn't imagine our stack without them now.", a: "Nina Kowalski", r: "Head of GTM · Forge" },
+  { q: "We replaced three separate vendors with Apex and haven't looked back. Our pipeline is up significantly, while our overall acquisition costs are down. They ship high-quality work without any drama.", a: "Tomás Riviera", r: "COO · Meridian" },
+  { q: "The strategic clarity we gained in their first audit alone was worth the entire year's investment. They helped us see the gaps in our motion that were costing us millions in lost revenue.", a: "Hannah Brooks", r: "VP Marketing · Aurum" },
+  { q: "Quietly the best operators we've ever hired. They ship without drama, optimize relentlessly, and understand the nuances of cold outreach better than anyone in the industry right now.", a: "Kenji Watanabe", r: "Founder · Obelisk" },
+  { q: "Pipeline that compounds month over month. Their reporting is the first one we actually understand and look forward to seeing. They've brought a level of precision to our sales that we didn't think was possible.", a: "Lila Park", r: "Revenue Lead · Parallax" },
 ];
 
 function Card({ t }: { t: typeof items[number] }) {
   return (
-    <figure className="bg-[var(--beige-light)] rounded-3xl p-8 border border-[var(--ink)]/10 shadow-soft">
-      <div className="font-display text-5xl text-[var(--ink-soft)] leading-none italic">"</div>
-      <blockquote className="mt-3 text-[var(--ink)] text-lg leading-relaxed">{t.q}</blockquote>
-      <figcaption className="mt-6 pt-4 border-t border-[var(--ink)]/10">
-        <div className="font-display text-[var(--ink)] text-lg">{t.a}</div>
-        <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--ink-soft)] mt-1">{t.r}</div>
+    <figure className="bg-[var(--beige-light)] rounded-xl md:rounded-3xl p-5 md:p-8 border border-[var(--ink)]/10 shadow-soft flex flex-col justify-between overflow-hidden min-h-[320px] md:aspect-square">
+      <div>
+        <div className="font-display text-3xl md:text-5xl text-[var(--ink-soft)] leading-none italic">"</div>
+        <blockquote className="mt-2 md:mt-3 text-sm md:text-lg text-[var(--ink)] leading-relaxed">{t.q}</blockquote>
+      </div>
+      <figcaption className="mt-4 md:mt-6 pt-3 md:pt-4 border-t border-[var(--ink)]/10">
+        <div className="font-display text-base md:text-lg text-[var(--ink)]">{t.a}</div>
+        <div className="text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-[var(--ink-soft)] mt-1">{t.r}</div>
       </figcaption>
     </figure>
   );
@@ -48,7 +50,7 @@ export function Testimonials() {
       </div>
 
       <div className="relative h-[80vh] [mask-image:linear-gradient(180deg,transparent,black_12%,black_88%,transparent)]">
-        {/* Mobile View: Single Column */}
+        {/* Mobile View: Infinite Scroll Loop */}
         <div className="md:hidden relative overflow-hidden h-full">
           <div className="flex flex-col gap-6 col-up-slow">
             {[...items, ...items].map((t, j) => (
@@ -57,7 +59,7 @@ export function Testimonials() {
           </div>
         </div>
 
-        {/* Desktop View: Three Columns */}
+        {/* Desktop View: Three Columns Infinite Scroll */}
         <div className="hidden md:grid grid-cols-3 gap-6 max-w-7xl mx-auto h-full">
           {cols.map((col, i) => (
             <div key={i} className="relative overflow-hidden h-full">

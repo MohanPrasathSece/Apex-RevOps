@@ -1,27 +1,45 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import logo from "../assets/Untitled_design-removebg-preview.png";
 
+// Footer component sync'd with header branding
 export function Footer() {
   return (
     <footer className="relative bg-[var(--ink)] text-[var(--beige-light)] overflow-hidden">
       <div className="absolute inset-0 noise-bg opacity-[0.04] pointer-events-none" />
-      <div className="relative max-w-7xl mx-auto px-6 py-20">
+      <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-20">
+        <div className="flex flex-col md:flex-row items-start justify-between mb-10 md:mb-20 gap-10">
+          <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-3 group">
+            <img src={logo} alt="Apex" width={64} height={64} className="w-12 md:w-16 h-12 md:h-16 object-contain" />
+            <div className="leading-tight">
+              <div className="font-display text-2xl text-[var(--beige-light)] font-medium tracking-tight">Apex<span className="italic">RevOps</span></div>
+            </div>
+          </Link>
+          <Link
+            to="/contact"
+            onClick={() => window.scrollTo(0, 0)}
+            className="md:hidden inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--beige-light)] text-[var(--ink)] font-medium text-sm"
+          >
+            Work with us <ArrowUpRight className="w-4 h-4" />
+          </Link>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid md:grid-cols-12 gap-12 pb-16 border-b border-[var(--beige-light)]/15"
+          className="grid md:grid-cols-12 gap-8 md:gap-12 pb-16 border-b border-[var(--beige-light)]/15"
         >
-          <div className="md:col-span-6">
-            <h2 className="hidden md:block font-display text-4xl md:text-8xl leading-[0.9] text-[var(--beige-light)] font-light">
+          <div className="hidden md:block md:col-span-6">
+            <h2 className="font-display text-4xl md:text-8xl leading-[0.9] text-[var(--beige-light)] font-light">
               Let's build<br /><span className="italic">your edge.</span>
             </h2>
             <Link
               to="/contact"
               onClick={() => window.scrollTo(0, 0)}
-              className="hidden md:inline-flex items-center gap-2 mt-10 px-7 py-4 rounded-full bg-[var(--beige-light)] text-[var(--ink)] font-medium hover:shadow-glow transition-shadow"
+              className="inline-flex items-center gap-2 mt-10 px-7 py-4 rounded-full bg-[var(--beige-light)] text-[var(--ink)] font-medium hover:shadow-glow transition-shadow"
             >
               Schedule a meeting <ArrowUpRight className="w-4 h-4" />
             </Link>

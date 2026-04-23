@@ -114,22 +114,22 @@ function ContactPage() {
           </Reveal>
 
           <Reveal className="lg:col-span-7" delay={0.15}>
-            <div className="bg-[var(--beige-light)] rounded-[2rem] p-10 md:p-16 shadow-soft border border-[var(--ink)]/10 h-full flex flex-col justify-center text-center">
-              <div className="w-20 h-20 mx-auto bg-[var(--ink)] rounded-full flex items-center justify-center text-[var(--beige-light)] mb-8">
-                <Calendar className="w-8 h-8" />
+            <div className="bg-[var(--beige-light)] rounded-[2rem] p-8 md:p-16 shadow-soft border border-[var(--ink)]/10 h-full flex flex-col justify-center text-center">
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto bg-[var(--ink)] rounded-full flex items-center justify-center text-[var(--beige-light)] mb-8">
+                <Calendar className="w-6 h-6 md:w-8 md:h-8" />
               </div>
-              <h2 className="font-display text-4xl md:text-5xl text-[var(--ink)] leading-[1.1] mb-6">
+              <h2 className="font-display text-3xl md:text-5xl text-[var(--ink)] leading-[1.1] mb-6 font-light">
                 Ready to scale your pipeline?
               </h2>
-              <p className="text-[var(--ink-soft)] text-lg mb-10 max-w-md mx-auto leading-relaxed">
+              <p className="text-[var(--ink-soft)] text-base md:text-lg mb-10 max-w-md mx-auto leading-relaxed">
                 Skip the back-and-forth. Book a direct strategy session with our team to map out your custom revenue engine.
               </p>
               <div>
                 <a 
-                  href="https://cal.com/rosh-chander/lead-gen" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[var(--ink)] text-[var(--beige-light)] font-medium hover:shadow-gold transition-shadow text-lg"
+                   href="https://cal.com/rosh-chander/lead-gen" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 rounded-full bg-[var(--ink)] text-[var(--beige-light)] font-medium hover:shadow-gold transition-shadow text-base md:text-lg"
                 >
                   Book your strategy call <ArrowUpRight className="w-5 h-5" />
                 </a>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export function PageIntro() {
   const [done, setDone] = useState(false);
   useEffect(() => {
-    const t = setTimeout(() => setDone(true), 2200);
+    const t = setTimeout(() => setDone(true), 1800);
     return () => clearTimeout(t);
   }, []);
   return (
@@ -14,7 +14,7 @@ export function PageIntro() {
           initial={{ y: 0 }}
           animate={{ y: 0 }}
           exit={{ y: "-100%" }}
-          transition={{ duration: 1.1, ease: [0.76, 0, 0.24, 1], delay: 0 }}
+          transition={{ duration: 1.0, ease: [0.76, 0, 0.24, 1] }}
           className="fixed inset-0 z-[200] bg-[var(--ink)] flex items-center justify-center overflow-hidden"
         >
           <div className="absolute inset-0 noise-bg opacity-[0.06] pointer-events-none" />

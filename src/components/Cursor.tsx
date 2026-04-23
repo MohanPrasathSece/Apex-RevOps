@@ -9,7 +9,8 @@ export function Cursor() {
   const sy = useSpring(y, { stiffness: 300, damping: 25, mass: 0.4 });
 
   useEffect(() => {
-    if (window.matchMedia("(pointer: coarse)").matches) return;
+    const isMobile = window.innerWidth < 768;
+    if (isMobile || window.matchMedia("(pointer: coarse)").matches) return;
     setHidden(false);
     const move = (e: MouseEvent) => {
       x.set(e.clientX - 12);

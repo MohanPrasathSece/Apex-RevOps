@@ -21,7 +21,7 @@ export function Navbar() {
     <motion.nav
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 2.4 }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 2.0 }}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? "py-2" : "py-4"}`}
     >
       <div className="mx-auto max-w-7xl px-6">
@@ -96,10 +96,15 @@ export function Navbar() {
                   >
                     <Link
                       to={l.to}
+                      activeOptions={{ exact: true }}
                       onClick={() => { setOpen(false); window.scrollTo(0, 0); }}
-                      className="text-[var(--ink)] font-display text-5xl hover:italic transition-all"
+                      className="group transition-all"
                     >
-                      {l.label}
+                      {({ isActive }) => (
+                        <span className={`font-display text-5xl ${isActive ? "text-[var(--ink)]/60" : "text-[var(--ink)]"}`}>
+                          {l.label}
+                        </span>
+                      )}
                     </Link>
                   </motion.div>
                 ))}

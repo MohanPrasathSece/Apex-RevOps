@@ -33,7 +33,8 @@ const brands = [
 ];
 
 export function LogoMarquee() {
-  const loop = [...brands, ...brands, ...brands];
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const loop = isMobile ? [...brands, ...brands] : [...brands, ...brands, ...brands];
   return (
     <section className="py-16 border-y border-[var(--ink)]/10 overflow-hidden bg-[var(--beige-light)]/50">
       <div className="container mx-auto px-4">

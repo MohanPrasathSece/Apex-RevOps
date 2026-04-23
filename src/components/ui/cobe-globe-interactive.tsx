@@ -18,15 +18,15 @@ interface GlobeInteractiveProps {
 
 const defaultMarkers: InteractiveMarker[] = [
   { id: "nyc", location: [40.71, -74.00], name: "New York", users: 3420 },
-  { id: "lon", location: [51.50, -0.12], name: "London", users: 2890 },
-  { id: "tok", location: [35.67, 139.65], name: "Tokyo", users: 2103 },
-  { id: "dxb", location: [25.20, 55.27], name: "Dubai", users: 1734 },
-  { id: "syd", location: [-33.86, 151.20], name: "Sydney", users: 1445 },
-  { id: "sao", location: [-23.55, -46.63], name: "São Paulo", users: 1567 },
-  { id: "bom", location: [19.07, 72.87], name: "Mumbai", users: 2650 },
-  { id: "sin", location: [1.35, 103.81], name: "Singapore", users: 1890 },
-  { id: "par", location: [48.85, 2.35], name: "Paris", users: 1650 },
+  { id: "sf", location: [37.77, -122.41], name: "San Francisco", users: 2100 },
+  { id: "aus", location: [30.26, -97.74], name: "Austin", users: 1540 },
   { id: "yyz", location: [43.65, -79.38], name: "Toronto", users: 1200 },
+  { id: "yvr", location: [49.28, -123.12], name: "Vancouver", users: 950 },
+  { id: "lon", location: [51.50, -0.12], name: "London", users: 2890 },
+  { id: "man", location: [53.48, -2.24], name: "Manchester", users: 1100 },
+  { id: "bom", location: [19.07, 72.87], name: "Mumbai", users: 2650 },
+  { id: "blr", location: [12.97, 77.59], name: "Bangalore", users: 2340 },
+  { id: "del", location: [28.61, 77.20], name: "New Delhi", users: 1980 },
 ]
 
 export function GlobeInteractive({
@@ -88,16 +88,17 @@ export function GlobeInteractive({
       if (width === 0) return
       if (globe) return // already initialized
 
+      const isMobile = window.innerWidth < 768;
       globe = createGlobe(canvas, {
         devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
         width, height: width,
         phi: 0, theta: 0.2, dark: 0, diffuse: 1.5,
         mapSamples: 16000, mapBrightness: 10,
         baseColor: [1, 1, 1],
-        markerColor: [0.1, 0.2, 0.45],
+        markerColor: isMobile ? [0.28, 0.25, 0.22] : [0.1, 0.2, 0.45],
         glowColor: [0.94, 0.93, 0.91],
         markerElevation: 0,
-        markers: markers.map((m) => ({ location: m.location, size: 0.025, id: m.id })),
+        markers: markers.map((m) => ({ location: m.location, size: isMobile ? 0.04 : 0.025, id: m.id })),
         arcs: [], arcColor: [0.15, 0.3, 0.55],
         arcWidth: 0.5, arcHeight: 0.25, opacity: 0.7,
       })
@@ -164,7 +165,7 @@ export function GlobeInteractive({
             flexDirection: "column" as const,
             alignItems: "center",
             padding: expanded === m.id ? "0.4rem 0.6rem" : "0.3rem 0.5rem",
-            background: "#1a1a2e",
+            background: window.innerWidth < 768 ? "#000" : "#1a1a2e",
             color: "#fff",
             borderRadius: 3,
             cursor: "pointer",

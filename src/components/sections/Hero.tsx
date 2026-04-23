@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import { ArrowDown } from "lucide-react";
 import { RevealText } from "../Reveal";
@@ -7,10 +7,14 @@ import { MagneticButton } from "../MagneticButton";
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 180]);
-  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", isMobile ? "0%" : "30%"]);
+  const targetY = useTransform(scrollYProgress, [0, 1], [0, isMobile ? 0 : 180]);
+  const targetOpacity = useTransform(scrollYProgress, [0, 0.85], [1, isMobile ? 1 : 0]);
+  const targetBgY = useTransform(scrollYProgress, [0, 1], ["0%", isMobile ? "0%" : "30%"]);
+
+  const y = useSpring(targetY, { stiffness: 100, damping: 30, restDelta: 0.001 });
+  const opacity = useSpring(targetOpacity, { stiffness: 100, damping: 30, restDelta: 0.001 });
+  const bgY = targetBgY; // Background doesn't need spring as much, but can be added if needed
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden bg-[var(--beige)]">
@@ -33,7 +37,7 @@ export function Hero() {
       <motion.div
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
-        transition={{ duration: 1.6, delay: 2.4, ease: [0.76, 0, 0.24, 1] }}
+        transition={{ duration: 1.4, delay: 2.0, ease: [0.76, 0, 0.24, 1] }}
         className="absolute left-6 right-6 top-32 h-px bg-[var(--ink)]/20 origin-left z-10"
       />
 
@@ -41,7 +45,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.4 }}
+          transition={{ duration: 0.8, delay: 2.0 }}
           className="flex items-center justify-between mb-12"
         >
           <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)]">
@@ -64,7 +68,7 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 3.0 }}
+            transition={{ duration: 0.8, delay: 2.3 }}
             className="md:col-span-5 text-base md:text-lg text-[var(--ink-soft)] leading-relaxed max-w-md"
           >
             A boutique B2B revenue studio engineering precision lead generation,
@@ -74,7 +78,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 3.2 }}
+            transition={{ duration: 0.8, delay: 2.4 }}
             className="md:col-span-7 flex flex-wrap items-center gap-4 md:justify-end"
           >
             <MagneticButton href="/contact">Schedule a meeting</MagneticButton>
@@ -84,15 +88,6 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 3.4 }}
-          className="absolute bottom-0 left-6 hidden md:flex items-center gap-3 text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)]"
-        >
-          <ArrowDown className="w-3 h-3 animate-bounce" />
-          Scroll
-        </motion.div>
       </motion.div>
     </section>
   );

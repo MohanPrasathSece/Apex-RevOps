@@ -7,9 +7,9 @@ export function ExpandingCard() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   // responsive transforms to ensure smoothness on mobile
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [isMobile ? 0.95 : 0.78, 1, 1]);
-  const radius = useTransform(scrollYProgress, [0, 0.5], [isMobile ? "24px" : "56px", "8px"]);
-  const imgY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [isMobile ? 1 : 0.78, 1, 1]);
+  const radius = useTransform(scrollYProgress, [0, 0.5], [isMobile ? "0px" : "56px", isMobile ? "0px" : "8px"]);
+  const imgY = useTransform(scrollYProgress, [0, 1], ["-10%", isMobile ? "0%" : "10%"]);
 
   return (
     <section ref={ref} className="relative pt-20 md:pt-32 bg-[var(--beige)]">

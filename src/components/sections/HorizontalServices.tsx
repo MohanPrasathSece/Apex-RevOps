@@ -45,37 +45,24 @@ const services = [
 
 function MobileCard({ s, i }: { s: typeof services[number]; i: number }) {
   return (
-    <div className="relative mb-10 w-full md:hidden">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="bg-[var(--beige-light)] rounded-[2rem] p-8 shadow-soft border border-[var(--ink)]/10 min-h-[420px] flex flex-col"
-      >
-        <div className="flex items-center justify-between mb-8">
-          <div className="w-12 h-12 rounded-2xl bg-[var(--ink)] flex items-center justify-center text-[var(--beige-light)]">
-            <s.icon className="w-6 h-6" />
+    <div className="relative mb-6 w-full md:hidden">
+      <Link to="/contact">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-[var(--beige-light)] rounded-2xl p-6 shadow-soft border border-[var(--ink)]/10 flex items-center justify-between gap-4"
+        >
+          <div className="flex-1">
+            <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--ink-soft)]/60 mb-1">0{i + 1}</div>
+            <h3 className="font-display text-xl text-[var(--ink)] mb-1">{s.title}</h3>
+            <p className="text-[var(--ink-soft)] text-xs line-clamp-1">{s.desc}</p>
           </div>
-          <div className="text-sm font-display italic text-[var(--ink-soft)]">0{i + 1}</div>
-        </div>
-        
-        <h3 className="font-display text-3xl text-[var(--ink)] leading-[1.1] mb-4">{s.title}</h3>
-        <p className="text-[var(--ink-soft)] text-base mb-8 leading-relaxed">{s.desc}</p>
-        
-        <div className="mt-auto space-y-3">
-          <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--ink-soft)]/60 mb-2">Key Features</div>
-          {s.bullets.map((b, j) => (
-            <div key={j} className="flex items-center gap-3 text-sm text-[var(--ink)]">
-              <div className="w-1.5 h-1.5 rounded-full bg-[var(--ink)]/40" />
-              {b}
-            </div>
-          ))}
-        </div>
-        
-        <Link to="/contact" className="mt-8 flex items-center justify-center w-full py-4 rounded-xl border border-[var(--ink)] text-[var(--ink)] font-medium text-sm">
-          Get Started
-        </Link>
-      </motion.div>
+          <div className="w-10 h-10 rounded-full border border-[var(--ink)]/20 flex items-center justify-center shrink-0">
+            <ArrowUpRight className="w-4 h-4 text-[var(--ink)]" />
+          </div>
+        </motion.div>
+      </Link>
     </div>
   );
 }
@@ -158,16 +145,17 @@ function Row({ s, i }: { s: typeof services[number]; i: number }) {
 
 export function HorizontalServices() {
   const ref = useRef<HTMLDivElement>(null);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const labelY = useTransform(scrollYProgress, [0, 1], [60, -60]);
+  const labelY = useTransform(scrollYProgress, [0, 1], [isMobile ? 0 : 60, isMobile ? 0 : -60]);
 
   return (
-    <section ref={ref} className="relative py-20 md:py-32 px-6 bg-[var(--beige)]">
+    <section ref={ref} className="relative pt-32 pb-20 md:py-32 px-6 bg-[var(--beige)]">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-16 md:mb-24">
           <Reveal>
             <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-4">◆ Capabilities</div>
-            <h2 className="font-display text-4xl md:text-8xl text-[var(--ink)] leading-[0.95] font-light">
+            <h2 className="font-display text-4xl md:text-8xl text-[var(--ink)] leading-[0.95] font-light mt-12 md:mt-0">
               A full-stack <br/><span className="italic">revenue engine.</span>
             </h2>
           </Reveal>

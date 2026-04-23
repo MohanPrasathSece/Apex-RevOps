@@ -32,6 +32,7 @@ export function Reveal({ children, delay = 0, y = 40, className }: Props) {
 
 export function RevealText({ text, className }: { text: string; className?: string }) {
   const words = text.split(" ");
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   return (
     <span className={className}>
       {words.map((w, i) => (
@@ -40,7 +41,11 @@ export function RevealText({ text, className }: { text: string; className?: stri
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.04 }}
+            transition={{ 
+              duration: isMobile ? 0.4 : 0.5, 
+              ease: [0.22, 1, 0.36, 1], 
+              delay: isMobile ? (i * 0.02) : (i * 0.04) 
+            }}
             className="inline-block"
           >
             {w}

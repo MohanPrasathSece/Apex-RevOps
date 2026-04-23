@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Reveal } from "../Reveal";
+import { GlobeInteractive } from "../ui/cobe-globe-interactive";
 
 const steps = [
   { n: "01", title: "Discover", text: "We map your ICP, offer and motion. No assumptions, only data — extracted in our 90-minute audit." },
@@ -13,10 +14,10 @@ function Card({ i, total, item }: { i: number; total: number; item: typeof steps
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "start start"] });
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const scale = useTransform(scrollYProgress, [0, 1], [isMobile ? 0.98 : 0.92, 1]);
-  const rot = useTransform(scrollYProgress, [0, 1], [isMobile ? -1 : -2, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [isMobile ? 1 : 0.92, 1]);
+  const rot = useTransform(scrollYProgress, [0, 1], [isMobile ? 0 : -2, 0]);
   return (
-    <div ref={ref} style={{ top: isMobile ? '0' : `${100 + i * 28}px`, position: isMobile ? 'relative' : 'sticky' }}>
+    <div ref={ref} style={{ top: isMobile ? `${80 + i * 20}px` : `${100 + i * 28}px`, position: 'sticky' }}>
       <motion.div
         style={{ scale, rotate: rot }}
         className="relative bg-[var(--beige-light)] rounded-[2rem] p-10 md:p-16 shadow-soft border border-[var(--ink)]/10 overflow-hidden"
@@ -41,8 +42,11 @@ function Card({ i, total, item }: { i: number; total: number; item: typeof steps
 
 export function StackedCards() {
   return (
-    <section className="py-32 px-6 bg-[var(--beige)]">
+    <section className="pt-4 pb-20 md:py-32 px-6 bg-[var(--beige)]">
       <div className="max-w-6xl mx-auto">
+        <div className="md:hidden mb-16">
+          <GlobeInteractive className="w-full max-w-[300px] mx-auto opacity-40" />
+        </div>
         <Reveal>
           <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-4">◆ The process</div>
           <h2 className="font-display text-5xl md:text-8xl text-[var(--ink)] max-w-3xl leading-[0.95] mb-20 font-light">
