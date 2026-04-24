@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { Target, Mail, Linkedin, Calendar, Globe, Bot, Plus, X, ArrowUpRight } from "lucide-react";
 import { Reveal, RevealText } from "../components/Reveal";
 import { MagneticButton } from "../components/MagneticButton";
+import { useIsMobile } from "../hooks/use-mobile";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -118,6 +119,7 @@ function PricingTease() {
 }
 
 function ServicesPage() {
+  const isMobile = useIsMobile();
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   const open = openIdx === null ? null : services[openIdx];
 
