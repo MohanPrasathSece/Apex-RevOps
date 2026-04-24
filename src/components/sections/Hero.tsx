@@ -18,15 +18,18 @@ export function Hero() {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden bg-[var(--beige)]">
-      <motion.div style={{ y: bgY }} className="pointer-events-none absolute inset-0">
+      <motion.div 
+        style={{ y: bgY, willChange: "transform" }} 
+        className="pointer-events-none absolute inset-0"
+      >
         <img 
-          src={`https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=${isMobile ? 800 : 2069}&auto=format&fit=crop`} 
+          src={`https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=${isMobile ? 800 : 1600}&auto=format&fit=crop`} 
           alt="" 
           className="w-full h-full object-cover opacity-30 md:opacity-40"
         />
         {/* Desktop-only overlays */}
-        <div className="hidden md:block absolute -top-20 -left-20 w-[700px] h-[700px] rounded-full bg-[var(--beige-light)] blur-[140px] opacity-90" />
-        <div className="hidden md:block absolute -bottom-20 -right-20 w-[800px] h-[800px] rounded-full bg-[var(--beige-light)] blur-[160px] opacity-80" />
+        <div className="hidden md:block absolute -top-20 -left-20 w-[700px] h-[700px] rounded-full bg-[var(--beige-light)] blur-[100px] opacity-90 will-change-[filter]" />
+        <div className="hidden md:block absolute -bottom-20 -right-20 w-[800px] h-[800px] rounded-full bg-[var(--beige-light)] blur-[120px] opacity-80 will-change-[filter]" />
         {/* Additional mobile white overlay for better readability */}
         <div className="absolute inset-0 bg-white/30 md:hidden pointer-events-none" />
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/40 to-transparent md:hidden pointer-events-none" />
@@ -44,7 +47,10 @@ export function Hero() {
         className="absolute left-6 right-6 top-32 h-px bg-[var(--ink)]/20 origin-left z-10"
       />
 
-      <motion.div style={{ y, opacity }} className="relative max-w-7xl mx-auto px-6 w-full z-20">
+      <motion.div 
+        style={{ y, opacity, willChange: "transform, opacity" }} 
+        className="relative max-w-7xl mx-auto px-6 w-full z-20"
+      >
         <motion.div
           {...(!isMobile ? {
             initial: { opacity: 0, y: 12 },

@@ -93,7 +93,7 @@ export function GlobeInteractive({
         devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
         width, height: width,
         phi: 0, theta: 0.2, dark: 0, diffuse: 1.5,
-        mapSamples: 16000, mapBrightness: 10,
+        mapSamples: isMobile ? 6000 : 12000, mapBrightness: 10,
         baseColor: [1, 1, 1],
         markerColor: isMobile ? [0.28, 0.25, 0.22] : [0.1, 0.2, 0.45],
         glowColor: [0.94, 0.93, 0.91],
@@ -147,6 +147,7 @@ export function GlobeInteractive({
         style={{
           width: "100%", height: "100%", cursor: "grab", opacity: 0,
           transition: "opacity 1.2s ease", borderRadius: "50%", touchAction: "none",
+          willChange: "opacity, transform"
         }}
       />
       {markers.map((m) => (

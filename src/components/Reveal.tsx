@@ -26,6 +26,7 @@ export function Reveal({ children, delay = 0, y = 40, className }: Props) {
         viewport: { once: true, margin: "-80px" },
         variants: variants
       } : {})}
+      style={{ willChange: "transform, opacity" }}
       className={className}
     >
       {children}
@@ -51,6 +52,7 @@ export function RevealText({ text, className }: { text: string; className?: stri
                 delay: i * 0.04 
               }
             } : {})}
+            style={{ willChange: "transform, opacity" }}
             className="inline-block"
           >
             {w}

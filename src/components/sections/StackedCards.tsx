@@ -19,10 +19,10 @@ function Card({ i, total, item }: { i: number; total: number; item: typeof steps
   return (
     <div ref={ref} style={{ top: isMobile ? `${80 + i * 20}px` : `${100 + i * 28}px`, position: 'sticky' }}>
       <motion.div
-        style={{ scale, rotate: rot }}
+        style={{ scale, rotate: rot, willChange: "transform" }}
         className="relative bg-[var(--beige-light)] rounded-[2rem] p-10 md:p-16 shadow-soft border border-[var(--ink)]/10 overflow-hidden"
       >
-        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[var(--ink)]/[0.03] blur-[80px]" />
+        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[var(--ink)]/[0.03] blur-[60px] will-change-[filter]" />
         <div className="relative grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-3">
             <div className="font-display text-7xl md:text-9xl text-[var(--ink)] leading-none font-light italic">{item.n}</div>

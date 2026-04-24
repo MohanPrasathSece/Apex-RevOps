@@ -95,6 +95,7 @@ function Row({ s, i }: { s: typeof services[number]; i: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.7, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+      style={{ willChange: "transform, opacity" }}
       className="hidden md:block relative group border-t border-[var(--ink)]/15 last:border-b py-10 md:py-12 overflow-hidden"
     >
       {/* sliding hover wash */}
@@ -162,7 +163,10 @@ export function HorizontalServices() {
               A full-stack <br/><span className="italic">revenue engine.</span>
             </h2>
           </Reveal>
-          <motion.div style={{ y: labelY }} className="hidden md:block text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] writing-vertical">
+          <motion.div 
+            style={{ y: labelY, willChange: "transform" }} 
+            className="hidden md:block text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] writing-vertical"
+          >
             06 services / one system
           </motion.div>
         </div>

@@ -21,7 +21,7 @@ export function Stats() {
     <section ref={ref} className="relative py-20 md:py-32 bg-[var(--beige-light)]">
       {/* huge parallax word */}
       <motion.div
-        style={{ y: wordY }}
+        style={{ y: wordY, willChange: "transform" }}
         aria-hidden
         className="pointer-events-none absolute top-6 left-6 font-display italic text-[12vw] md:text-[10vw] leading-[0.85] text-ink opacity-5 whitespace-nowrap select-none"
       >
