@@ -71,7 +71,7 @@ export function Hero() {
             className="md:col-span-5 text-base md:text-lg text-[var(--ink-soft)] leading-relaxed max-w-md"
           >
             An elite B2B growth agency specializing in targeted lead generation,
-            appointment setting, and intelligent outreach automation — built for teams
+            appointment setting, and intelligent outreach automation. Built for teams
             that demand predictable pipeline.
           </motion.p>
 

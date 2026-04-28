@@ -20,7 +20,7 @@ export const Route = createFileRoute("/services")({
 });
 
 const services = [
-  { icon: Target, title: "Lead Generation", short: "Pipeline-grade lists, built from intent.", long: "We blend firmographics, technographics and intent signals to assemble lists that convert — verified, enriched and ready to ship.", bullets: ["Verified ICP enrichment", "Intent-based targeting", "CRM-ready exports", "Continuous list refresh"] },
+  { icon: Target, title: "Lead Generation", short: "Pipeline-grade lists, built from intent.", long: "We blend firmographics, technographics and intent signals to assemble lists that convert: verified, enriched and ready to ship.", bullets: ["Verified ICP enrichment", "Intent-based targeting", "CRM-ready exports", "Continuous list refresh"] },
   { icon: Calendar, title: "Appointment Setting", short: "SDR-grade conversations, on autopilot.", long: "Our team books qualified meetings directly to your calendar. We handle objection handling, qualification and scheduling.", bullets: ["Dedicated SDR pod", "Live qualification", "Calendar integrations", "Daily handoff briefs"] },
   { icon: Mail, title: "Cold Email Outreach", short: "Deliverability-first. Reply-rate obsessed.", long: "From inbox warm-up to copy that earns the reply, we build outbound systems that land in primary and convert at 3-5x category averages.", bullets: ["Warmed inbox infrastructure", "A/B tested sequences", "Personalized copy", "Real-time dashboards"] },
   { icon: Linkedin, title: "LinkedIn Outreach", short: "Social selling, engineered.", long: "Multi-touch LinkedIn campaigns combined with thought leadership and human-led conversations to fill your pipeline.", bullets: ["Profile optimization", "Multi-step sequences", "Content amplification", "Manual follow-up"] },
@@ -88,7 +88,7 @@ function ServicesHero() {
         <Reveal delay={0.4}>
           <p className="mt-10 max-w-2xl text-lg text-[var(--ink-soft)] leading-relaxed">
             Six interlocking services. One revenue engine. Engage one capability or
-            run the full system — every engagement is bespoke to your motion.
+            run the full system: every engagement is bespoke to your motion.
           </p>
         </Reveal>
       </div>

@@ -8,7 +8,7 @@ export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
       { title: "Work · Apex RevOps" },
-      { name: "description", content: "Selected case studies — outbound campaigns, AI automations and revenue engines we've engineered." },
+      { name: "description", content: "Selected case studies: outbound campaigns, AI automations and revenue engines we've engineered." },
       { property: "og:title", content: "Work · Apex RevOps" },
       { property: "og:description", content: "Selected case studies and revenue outcomes." },
     ],
@@ -69,7 +69,7 @@ function WorkPage() {
       <section ref={ref} className="relative pt-40 pb-16 px-6 overflow-hidden">
         <motion.div style={{ y }} aria-hidden className="absolute -top-10 left-0 right-0 text-center font-display italic text-[22vw] text-[var(--ink)]/[0.04] leading-[0.85] select-none pointer-events-none">work</motion.div>
         <div className="relative max-w-7xl mx-auto">
-          <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-6">◆ Selected work · 2021 — 2025</div>
+          <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-6">◆ Selected work · 2021-2025</div>
           <h1 className="font-display text-[clamp(3rem,9vw,9rem)] leading-[0.9] text-[var(--ink)] font-light">
             <RevealText text="Pipelines we've" />
             <br /><span className="italic"><RevealText text="quietly built." /></span>
@@ -77,7 +77,7 @@ function WorkPage() {
           <Reveal delay={0.4}>
             <p className="mt-10 max-w-xl text-lg text-[var(--ink-soft)] leading-relaxed">
               A small selection of partners we've engineered revenue systems for.
-              We work under NDA — names shared with permission.
+              We work under NDA. Names shared with permission.
             </p>
           </Reveal>
         </div>

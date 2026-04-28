@@ -39,7 +39,7 @@ export function LogoMarquee() {
     <section className="py-16 border-y border-[var(--ink)]/10 overflow-hidden bg-[var(--beige-light)]/50">
       <div className="container mx-auto px-4">
         <div className="text-center text-[10px] uppercase tracking-[0.4em] text-[var(--ink-soft)] mb-10 font-medium">
-          ◆ Trusted by elite revenue teams
+          ◆ Trusted by clients across the world
         </div>
       </div>
       

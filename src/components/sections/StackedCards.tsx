@@ -4,10 +4,10 @@ import { Reveal } from "../Reveal";
 import { GlobeInteractive } from "../ui/cobe-globe-interactive";
 
 const steps = [
-  { n: "01", title: "Discover", text: "We map your ICP, offer and motion. No assumptions, only data — extracted in our 90-minute audit." },
+  { n: "01", title: "Discover", text: "We map your ICP, offer and motion. No assumptions, only data, extracted in our 90-minute audit." },
   { n: "02", title: "Engineer", text: "Infrastructure, copy and sequences built bespoke to your unique market and category." },
   { n: "03", title: "Launch", text: "Multi-channel campaigns go live with daily monitoring, A/B testing and tuning." },
-  { n: "04", title: "Compound", text: "We optimize, automate and scale what's working — relentlessly, and forever." },
+  { n: "04", title: "Compound", text: "We optimize, automate and scale what's working, relentlessly and forever." },
 ];
 
 function Card({ i, total, item }: { i: number; total: number; item: typeof steps[number] }) {

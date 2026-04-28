@@ -68,7 +68,7 @@
   --ink: oklch(0.28 0.025 55);            /* dark warm brown for text - high contrast */
   --ink-soft: oklch(0.42 0.028 55);       /* secondary text */
 
-  /* Legacy token aliases — remapped to beige tones so existing classes still work */
+  /* Legacy token aliases: remapped to beige tones so existing classes still work */
   --gold: oklch(0.55 0.045 60);           /* medium beige-brown accent */
   --gold-soft: oklch(0.94 0.012 80);      /* light beige */
   --champagne: oklch(0.90 0.015 78);

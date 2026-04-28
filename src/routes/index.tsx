@@ -11,9 +11,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Apex RevOps · Growth Solutions That Actually Work" },
-      { name: "description", content: "Premium B2B lead generation, cold outreach and AI automation that books qualified meetings — at scale." },
+      { name: "description", content: "Premium B2B lead generation, cold outreach and AI automation that books qualified meetings at scale." },
       { property: "og:title", content: "Apex RevOps · Growth Solutions That Actually Work" },
-      { property: "og:description", content: "Premium B2B lead generation, cold outreach and AI automation that books qualified meetings — at scale." },
+      { property: "og:description", content: "Premium B2B lead generation, cold outreach and AI automation that books qualified meetings at scale." },
     ],
   }),
   component: Index,

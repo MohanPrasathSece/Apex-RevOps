@@ -43,7 +43,7 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Apex RevOps · Growth Solutions That Actually Work" },
-      { name: "description", content: "Apex RevOps — premium B2B lead generation, cold outreach and AI automation that delivers booked meetings, not promises." },
+      { name: "description", content: "Apex RevOps: premium B2B lead generation, cold outreach and AI automation that delivers booked meetings, not promises." },
       { name: "author", content: "Apex RevOps" },
       { property: "og:title", content: "Apex RevOps · Growth Solutions That Actually Work" },
       { property: "og:description", content: "Premium B2B lead generation and AI automation for revenue teams." },

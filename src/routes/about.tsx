@@ -21,7 +21,7 @@ const timeline = [
   { year: "2022", title: "First $1M in client pipeline", text: "30 campaigns, 12,000 personalized emails, our first repeatable playbook." },
   { year: "2023", title: "AI automation lab launched", text: "Custom GPT agents and workflow infra for revenue teams." },
   { year: "2024", title: "150K+ emails, 300+ meetings", text: "Trusted by founders, CMOs and SDR leaders across SaaS, fintech and AI." },
-  { year: "2025", title: "Apex Edge becomes a system", text: "From boutique to multidisciplinary growth partner — without losing the craft." },
+  { year: "2025", title: "Apex Edge becomes a system", text: "From boutique to multidisciplinary growth partner, without losing the craft." },
 ];
 
 const values = [
@@ -49,7 +49,7 @@ function AboutHero() {
         <motion.div style={{ y: y1 }} className="mt-12 grid md:grid-cols-12 gap-12">
           <Reveal delay={0.4} className="md:col-span-6 md:col-start-7">
             <p className="text-lg text-[var(--ink-soft)] leading-relaxed">
-              We work with a small, deliberate roster of B2B companies — pairing strategy,
+              We work with a small, deliberate roster of B2B companies, pairing strategy,
               copy, infrastructure and AI to turn outbound from a cost center into a
               compounding asset.
             </p>
