@@ -47,10 +47,7 @@ function ContactHero() {
     <section ref={ref} className="relative pt-40 pb-16 px-6">
       <motion.div style={{ y }} aria-hidden className="absolute top-0 right-8 font-display italic text-[16vw] md:text-[14vw] text-ink opacity-5 leading-none select-none pointer-events-none">talk</motion.div>
       <div className="relative max-w-7xl mx-auto">
-        <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-6">
-          <span className="w-2 h-2 rounded-full bg-emerald-700 animate-pulse" />
-          <span>Currently accepting Q3 2026 engagements</span>
-        </div>
+
         <h1 className="font-display text-[clamp(3rem,9vw,9rem)] leading-[0.9] text-[var(--ink)] font-light">
           <RevealText text="Tell us about" />
           <br /><span className="italic"><RevealText text="your ambitions." /></span>

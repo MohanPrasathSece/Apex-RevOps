@@ -51,27 +51,13 @@ export function Hero() {
         style={{ y, opacity, willChange: "transform, opacity" }} 
         className="relative max-w-7xl mx-auto px-6 w-full z-20"
       >
-        <motion.div
-          {...(!isMobile ? {
-            initial: { opacity: 0, y: 12 },
-            animate: { opacity: 1, y: 0 },
-            transition: { duration: 0.8, delay: 2.0 }
-          } : {})}
-          className="flex items-center justify-between mb-12"
-        >
-          <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)]">
-            ◆ Edge Solutions · Est. 2021
-          </div>
-          <div className="hidden md:block text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)]">
-            Now booking · Q3 2026
-          </div>
-        </motion.div>
+        {/* Removed Edge Solutions header */}
 
         <h1 className="font-display text-[clamp(2.5rem,10vw,11rem)] leading-[0.9] text-[var(--ink)] font-light">
-          <RevealText text="Growth" />
+          <RevealText text="Revenue" />
           <br />
           <span className="italic font-normal">
-            <RevealText text="that compounds." />
+            <RevealText text="engineered." />
           </span>
         </h1>
 
@@ -84,8 +70,9 @@ export function Hero() {
             } : {})}
             className="md:col-span-5 text-base md:text-lg text-[var(--ink-soft)] leading-relaxed max-w-md"
           >
-            A boutique B2B revenue studio engineering precision lead generation,
-            cold outreach and AI automation — for teams that take pipeline seriously.
+            An elite B2B growth agency specializing in targeted lead generation,
+            appointment setting, and intelligent outreach automation — built for teams
+            that demand predictable pipeline.
           </motion.p>
 
           <motion.div

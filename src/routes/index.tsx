@@ -3,7 +3,7 @@ import { Hero } from "../components/sections/Hero";
 import { ExpandingCard } from "../components/sections/ExpandingCard";
 import { Stats } from "../components/sections/Stats";
 import { HorizontalServices } from "../components/sections/HorizontalServices";
-import { StackedCards } from "../components/sections/StackedCards";
+
 import { Testimonials } from "../components/sections/Testimonials";
 import { LogoMarquee } from "../components/sections/LogoMarquee";
 
@@ -27,7 +27,6 @@ function Index() {
       <ExpandingCard />
       <Stats />
       <HorizontalServices />
-      <StackedCards />
       <Testimonials />
     </>
   );

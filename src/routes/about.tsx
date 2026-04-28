@@ -122,17 +122,24 @@ function AboutPage() {
             <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-4">◆ Our story</div>
             <h2 className="font-display text-5xl md:text-7xl text-[var(--ink)] mb-20 font-light">A short timeline.</h2>
           </Reveal>
-          <div className="space-y-2">
+          <div className="space-y-0 relative border-l-2 border-[var(--ink)]/10 ml-4 md:ml-12 pl-8 md:pl-16">
             {timeline.map((t, i) => (
               <Reveal key={i} delay={i * 0.05}>
                 <motion.div
                   whileHover={{ x: 12 }}
                   transition={{ duration: 0.4 }}
-                  className="grid md:grid-cols-12 gap-6 items-baseline border-b border-[var(--ink)]/15 py-10 group"
+                  className="relative py-12 group"
                 >
-                  <div className="md:col-span-2 font-display text-3xl md:text-4xl text-[var(--ink)] italic font-light">{t.year}</div>
-                  <div className="md:col-span-4 font-display text-2xl md:text-3xl text-[var(--ink)] font-light">{t.title}</div>
-                  <div className="md:col-span-6 text-[var(--ink-soft)] leading-relaxed">{t.text}</div>
+                  <div className="absolute -left-[39px] md:-left-[71px] top-14 w-4 h-4 rounded-full bg-[var(--beige-light)] border-2 border-[var(--ink)] group-hover:bg-[var(--ink)] transition-colors duration-300" />
+                  <div className="grid md:grid-cols-12 gap-6 items-start">
+                    <div className="md:col-span-3">
+                      <div className="font-display text-4xl md:text-5xl text-gold italic font-light">{t.year}</div>
+                    </div>
+                    <div className="md:col-span-9 bg-[var(--beige)]/50 p-8 rounded-3xl border border-[var(--ink)]/5 shadow-soft">
+                      <div className="font-display text-2xl md:text-3xl text-[var(--ink)] font-medium mb-3">{t.title}</div>
+                      <div className="text-[var(--ink-soft)] text-lg leading-relaxed">{t.text}</div>
+                    </div>
+                  </div>
                 </motion.div>
               </Reveal>
             ))}
@@ -144,18 +151,7 @@ function AboutPage() {
 
       <StickyNarrative />
 
-      <section className="py-32 px-6 bg-[var(--beige)]">
-        <div className="max-w-4xl mx-auto text-center">
-          <Reveal>
-            <h2 className="font-display text-5xl md:text-7xl text-[var(--ink)] leading-[0.95] font-light">
-              Want to see what we'd build for <span className="italic">you?</span>
-            </h2>
-            <div className="mt-10 flex justify-center">
-              <MagneticButton href="/contact">Schedule a meeting</MagneticButton>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+
     </>
   );
 }

@@ -51,9 +51,9 @@ export function ExpandingCard() {
               { k: "Pipeline added", v: "$2.4M" },
               { k: "Time to launch", v: "14 days" },
             ].map((s) => (
-              <div key={s.k} className="bg-[var(--ink)] p-6">
-                <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--beige-light)]/50">{s.k}</div>
-                <div className="font-display text-3xl md:text-4xl text-[var(--beige-light)] mt-3 font-light">{s.v}</div>
+              <div key={s.k} className="bg-[var(--ink)] p-8 flex flex-col justify-center border border-[var(--ink-soft)]/20 shadow-inner">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--beige-light)]/60">{s.k}</div>
+                <div className="font-display text-5xl md:text-6xl text-[var(--beige-light)] mt-4 font-bold tracking-tight drop-shadow-[0_0_15px_rgba(237,230,218,0.2)]">{s.v}</div>
               </div>
             ))}
           </div>

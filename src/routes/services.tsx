@@ -5,6 +5,7 @@ import { Target, Mail, Linkedin, Calendar, Globe, Bot, Plus, X, ArrowUpRight } f
 import { Reveal, RevealText } from "../components/Reveal";
 import { MagneticButton } from "../components/MagneticButton";
 import { useIsMobile } from "../hooks/use-mobile";
+import { StackedCards } from "../components/sections/StackedCards";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -139,7 +140,11 @@ function ServicesPage() {
         </div>
       </section>
 
-      <PricingTease />
+      <StackedCards />
+
+      <div className="hidden">
+        <PricingTease />
+      </div>
 
       <AnimatePresence>
         {open && (

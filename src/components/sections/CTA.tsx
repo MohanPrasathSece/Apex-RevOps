@@ -16,27 +16,27 @@ export function CTA() {
   const y = useTransform(scrollYProgress, [0, 1], ["-20%", isMobile ? "-20%" : "20%"]);
 
   let content = {
-    bgWord: "scale",
-    top: "◆ The next step",
-    heading1: "Build a pipeline",
-    heading2: "that compounds.",
+    bgWord: "edge",
+    top: "◆ The edge",
+    heading1: "Get the",
+    heading2: "Apex Edge.",
     btn: "Start the conversation"
   };
 
   if (location.pathname === "/about") {
     content = {
-      bgWord: "partner",
-      top: "◆ Let's connect",
+      bgWord: "edge",
+      top: "◆ Find your edge",
       heading1: "Find your next",
-      heading2: "growth partner.",
+      heading2: "growth edge.",
       btn: "Get in touch"
     };
   } else if (location.pathname === "/services") {
     content = {
-      bgWord: "action",
-      top: "◆ Take action",
-      heading1: "Ready to",
-      heading2: "deploy?",
+      bgWord: "edge",
+      top: "◆ Take the edge",
+      heading1: "Ready for the",
+      heading2: "Apex Edge?",
       btn: "Discuss your project"
     };
   }

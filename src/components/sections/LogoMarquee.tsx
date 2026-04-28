@@ -39,7 +39,7 @@ export function LogoMarquee() {
     <section className="py-16 border-y border-[var(--ink)]/10 overflow-hidden bg-[var(--beige-light)]/50">
       <div className="container mx-auto px-4">
         <div className="text-center text-[10px] uppercase tracking-[0.4em] text-[var(--ink-soft)] mb-10 font-medium">
-          ◆ Partnered with category-defining teams
+          ◆ Trusted by elite revenue teams
         </div>
       </div>
       
@@ -52,7 +52,7 @@ export function LogoMarquee() {
           {loop.map((brand, i) => (
             <div 
               key={i} 
-              className="group flex items-center justify-center grayscale-0 md:grayscale opacity-100 md:opacity-40 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-500"
+              className="group flex items-center justify-center opacity-80 md:hover:opacity-100 transition-all duration-500"
             >
               <img 
                 src={brand.logo} 

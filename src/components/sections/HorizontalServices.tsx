@@ -46,7 +46,7 @@ const services = [
 function MobileCard({ s, i }: { s: typeof services[number]; i: number }) {
   return (
     <div className="relative mb-6 w-full md:hidden">
-      <Link to="/contact">
+      <Link to="/services">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -129,7 +129,7 @@ function Row({ s, i }: { s: typeof services[number]; i: number }) {
         </div>
         <div className="absolute right-6 top-1/2 -translate-y-1/2 md:relative md:right-0 md:top-0 md:translate-y-0 md:col-span-1 flex justify-end pointer-events-auto">
           <Link 
-            to="/contact"
+            to="/services"
             onMouseEnter={() => setArrowHover(true)}
             onMouseLeave={() => setArrowHover(false)}
           >

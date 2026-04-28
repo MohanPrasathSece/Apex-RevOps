@@ -8,6 +8,7 @@ interface InteractiveMarker {
   location: [number, number]
   name: string
   users: number
+  countryCode: string
 }
 
 interface GlobeInteractiveProps {
@@ -17,16 +18,16 @@ interface GlobeInteractiveProps {
 }
 
 const defaultMarkers: InteractiveMarker[] = [
-  { id: "nyc", location: [40.71, -74.00], name: "New York", users: 3420 },
-  { id: "sf", location: [37.77, -122.41], name: "San Francisco", users: 2100 },
-  { id: "aus", location: [30.26, -97.74], name: "Austin", users: 1540 },
-  { id: "yyz", location: [43.65, -79.38], name: "Toronto", users: 1200 },
-  { id: "yvr", location: [49.28, -123.12], name: "Vancouver", users: 950 },
-  { id: "lon", location: [51.50, -0.12], name: "London", users: 2890 },
-  { id: "man", location: [53.48, -2.24], name: "Manchester", users: 1100 },
-  { id: "bom", location: [19.07, 72.87], name: "Mumbai", users: 2650 },
-  { id: "blr", location: [12.97, 77.59], name: "Bangalore", users: 2340 },
-  { id: "del", location: [28.61, 77.20], name: "New Delhi", users: 1980 },
+  { id: "nyc", location: [40.71, -74.00], name: "New York", users: 3420, countryCode: "us" },
+  { id: "lon", location: [51.50, -0.12], name: "London", users: 2890, countryCode: "gb" },
+  { id: "tok", location: [35.68, 139.69], name: "Tokyo", users: 4100, countryCode: "jp" },
+  { id: "syd", location: [-33.86, 151.20], name: "Sydney", users: 1540, countryCode: "au" },
+  { id: "yyz", location: [43.65, -79.38], name: "Toronto", users: 1200, countryCode: "ca" },
+  { id: "ber", location: [52.52, 13.40], name: "Berlin", users: 1850, countryCode: "de" },
+  { id: "bom", location: [19.07, 72.87], name: "Mumbai", users: 2650, countryCode: "in" },
+  { id: "gru", location: [-23.55, -46.63], name: "São Paulo", users: 2200, countryCode: "br" },
+  { id: "sin", location: [1.35, 103.81], name: "Singapore", users: 1950, countryCode: "sg" },
+  { id: "dxb", location: [25.20, 55.27], name: "Dubai", users: 1750, countryCode: "ae" },
 ]
 
 export function GlobeInteractive({
@@ -166,21 +167,35 @@ export function GlobeInteractive({
             flexDirection: "column" as const,
             alignItems: "center",
             padding: expanded === m.id ? "0.4rem 0.6rem" : "0.3rem 0.5rem",
-            background: window.innerWidth < 768 ? "#000" : "#1a1a2e",
+            background: expanded === m.id ? (window.innerWidth < 768 ? "#000" : "#1a1a2e") : "transparent",
             color: "#fff",
-            borderRadius: 3,
+            borderRadius: 6,
             cursor: "pointer",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
+            boxShadow: expanded === m.id ? "0 2px 8px rgba(0,0,0,0.2)" : "none",
             opacity: `var(--cobe-visible-${m.id}, 0)`,
             filter: `blur(calc((1 - var(--cobe-visible-${m.id}, 0)) * 8px))`,
-            transition: "opacity 0.4s, filter 0.4s, transform 0.2s, padding 0.2s",
+            transition: "opacity 0.4s, filter 0.4s, transform 0.2s, padding 0.2s, background 0.2s, box-shadow 0.2s",
             zoom: expanded === m.id ? 1.05 : 1,
+            pointerEvents: "auto",
           }}
         >
-          <span style={{
-            fontFamily: "monospace", fontSize: "0.6rem", fontWeight: 600,
-            letterSpacing: "0.08em", textTransform: "uppercase" as const,
-          }}>{m.name}</span>
+          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <img 
+                src={`https://flagcdn.com/w40/${m.countryCode}.png`} 
+                alt={m.countryCode}
+                style={{ width: expanded === m.id ? "20px" : "28px", height: "auto", transition: "width 0.2s", borderRadius: "2px", boxShadow: expanded === m.id ? "none" : "0 1px 4px rgba(0,0,0,0.4)" }}
+              />
+            </span>
+            {expanded === m.id && (
+              <span style={{
+                fontFamily: "monospace", fontSize: "0.6rem", fontWeight: 600,
+                letterSpacing: "0.08em", textTransform: "uppercase" as const,
+              }}>
+                {m.name}
+              </span>
+            )}
+          </div>
           {expanded === m.id && (
             <span style={{
               fontFamily: "system-ui, sans-serif", fontSize: "0.55rem",

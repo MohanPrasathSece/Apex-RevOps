@@ -49,25 +49,11 @@ export function Testimonials() {
         </Reveal>
       </div>
 
-      <div className="relative h-[80vh] [mask-image:linear-gradient(180deg,transparent,black_12%,black_88%,transparent)]">
-        {/* Mobile View: Infinite Scroll Loop */}
-        <div className="md:hidden relative overflow-hidden h-full">
-          <div className="flex flex-col gap-6 col-up-slow">
-            {[...items, ...items].map((t, j) => (
-              <Card key={`mobile-${j}`} t={t} />
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop View: Three Columns Infinite Scroll */}
-        <div className="hidden md:grid grid-cols-3 gap-6 max-w-7xl mx-auto h-full">
-          {cols.map((col, i) => (
-            <div key={i} className="relative overflow-hidden h-full">
-              <div className={`flex flex-col gap-6 ${col.speed}`}>
-                {col.items.map((t, j) => (
-                  <Card key={`${i}-${j}`} t={t} />
-                ))}
-              </div>
+      <div className="relative [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]">
+        <div className="flex gap-6 marquee w-max items-stretch py-4 hover:[animation-play-state:paused]" style={{ animationDuration: '60s' }}>
+          {[...items, ...items].map((t, j) => (
+            <div key={`test-${j}`} className="w-[85vw] md:w-[400px] shrink-0">
+              <Card t={t} />
             </div>
           ))}
         </div>

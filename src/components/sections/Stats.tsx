@@ -43,7 +43,7 @@ export function Stats() {
                 <Reveal key={i} delay={i * 0.08}>
                   <div className="group">
                     <div className="flex items-baseline gap-4 border-b border-[var(--ink)]/20 pb-6">
-                      <div className="font-display text-7xl md:text-8xl text-[var(--ink)] leading-none font-light">
+                      <div className="font-display text-7xl md:text-8xl text-gold leading-none font-medium drop-shadow-sm">
                         <Counter to={m.v} suffix={m.s} />
                       </div>
                       <div className="ml-auto text-[10px] uppercase tracking-[0.3em] text-[var(--ink-soft)]">
