@@ -19,7 +19,7 @@ export function CTA() {
     top: "◆ Ready to Build Your Pipeline?",
     heading1: "Let's build",
     heading2: "your edge.",
-    description: "If you're looking for predictable outbound growth, qualified meetings, and systems that scale, let's start the conversation.",
+    description: "If you're looking for predictable outbound growth, qualified meetings and systems that scale, let's start the conversation.",
     btn1: "Schedule a Meeting",
     btn2: "Contact Us"
   };
@@ -29,7 +29,7 @@ export function CTA() {
       top: "◆ Find Your Edge",
       heading1: "Let's build your",
       heading2: "growth engine.",
-      description: "If you want predictable pipeline, qualified meetings, and scalable outbound systems, let's start the conversation.",
+      description: "If you want predictable pipeline, qualified meetings and scalable outbound systems, let's start the conversation.",
       btn1: "Schedule a Meeting",
       btn2: "Contact Us"
     };
@@ -76,7 +76,7 @@ export function CTA() {
             {content.description}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <MagneticButton href="/contact">
+            <MagneticButton href={content.btn1 === "Schedule a Meeting" ? "https://cal.com/rosh-chander/lead-gen?layout=mobile&overlayCalendar=true" : "/contact"} target={content.btn1 === "Schedule a Meeting" ? "_blank" : undefined} rel={content.btn1 === "Schedule a Meeting" ? "noopener noreferrer" : undefined}>
               {content.btn1}
             </MagneticButton>
             <MagneticButton href="/contact" variant="ghost">

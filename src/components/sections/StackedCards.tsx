@@ -4,10 +4,10 @@ import { Reveal } from "../Reveal";
 import { GlobeInteractive } from "../ui/cobe-globe-interactive";
 
 const steps = [
-  { n: "01", title: "Discover", text: "We begin with a structured onboarding and discovery process to understand your ICP, offer, positioning, buyer behavior, and growth objectives." },
-  { n: "02", title: "Engineer", text: "We build the infrastructure, messaging systems, outreach workflows, automations, and campaign assets tailored to your market." },
-  { n: "03", title: "Launch", text: "Multi-channel campaigns go live across LinkedIn, cold email, calling, and automation systems with daily monitoring and optimization." },
-  { n: "04", title: "Optimize", text: "We continuously improve targeting, messaging, reply rates, conversion performance, and operational workflows to scale results over time." },
+  { n: "01", title: "Discover", text: "We begin with a structured onboarding and discovery process to understand your ICP, offer, positioning, buyer behavior and growth objectives." },
+  { n: "02", title: "Engineer", text: "We build the infrastructure, messaging systems, outreach workflows, automations and campaign assets tailored to your market." },
+  { n: "03", title: "Launch", text: "Multi-channel campaigns go live across LinkedIn, cold email, calling and automation systems with daily monitoring and optimization." },
+  { n: "04", title: "Optimize", text: "We continuously improve targeting, messaging, reply rates, conversion performance and operational workflows to scale results over time." },
 ];
 
 function Card({ i, total, item }: { i: number; total: number; item: typeof steps[number] }) {

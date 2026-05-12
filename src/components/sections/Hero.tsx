@@ -74,7 +74,7 @@ export function Hero() {
             } : {})}
             className="md:col-span-5 text-base md:text-lg text-[var(--ink-soft)] leading-relaxed max-w-md"
           >
-            We help B2B companies generate qualified meetings through LinkedIn outreach, cold email, cold calling, AI automation, and conversion-focused systems built for predictable growth.
+            We help businesses generate more revenue through outbound and inbound systems built for predictable growth.
           </motion.p>
 
           <motion.div
@@ -85,7 +85,7 @@ export function Hero() {
             } : {})}
             className="md:col-span-7 flex flex-wrap items-center gap-4 md:justify-end"
           >
-            <MagneticButton href="/contact">Schedule a Meeting</MagneticButton>
+            <MagneticButton href="https://cal.com/rosh-chander/lead-gen?layout=mobile&overlayCalendar=true" target="_blank" rel="noopener noreferrer">Schedule a Meeting</MagneticButton>
             <MagneticButton href="/services" variant="ghost">
               Explore Services
             </MagneticButton>

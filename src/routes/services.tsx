@@ -23,43 +23,43 @@ const services = [
   { 
     icon: Target, 
     title: "Lead Generation", 
-    short: "Pipeline-ready prospect lists built around intent signals, ICP targeting, and active decision-makers.", 
-    long: "Targeted prospect lists built around your ideal customer profile, intent signals, active decision-makers, and buying behavior.", 
+    short: "Pipeline-ready prospect lists built around intent signals, ICP targeting and active decision-makers.", 
+    long: "Targeted prospect lists built around your ideal customer profile, intent signals, active decision-makers and buying behavior.", 
     bullets: ["ICP-based targeting", "Active LinkedIn user sourcing", "Industry & company filtering", "Verified decision-maker data"] 
   },
   { 
     icon: Calendar, 
     title: "Appointment Setting", 
     short: "Dedicated outbound systems that generate qualified conversations and book meetings directly onto your calendar.", 
-    long: "Dedicated outbound appointment-setting systems using cold calling, qualification workflows, and real-time calendar booking.", 
+    long: "Dedicated outbound appointment-setting systems using cold calling, qualification workflows and real-time calendar booking.", 
     bullets: ["Human outbound callers", "Qualified meeting booking", "Script development", "Weekly optimization & reporting"] 
   },
   { 
     icon: Mail, 
     title: "Cold Email Outreach", 
     short: "Deliverability-first cold email infrastructure paired with personalized multi-touch messaging sequences.", 
-    long: "Deliverability-focused cold email systems with domain setup, inbox warm-up, personalized copywriting, and reply handling.", 
+    long: "Deliverability-focused cold email systems with domain setup, inbox warm-up, personalized copywriting and reply handling.", 
     bullets: ["Domain & inbox infrastructure", "Warm-up & deliverability setup", "Multi-step email sequences", "Slack reply notifications"] 
   },
   { 
     icon: Linkedin, 
     title: "LinkedIn Outreach", 
-    short: "Multi-touch LinkedIn campaigns combining profile warming, outreach automation, and social selling strategies.", 
-    long: "LinkedIn outreach systems designed to build familiarity, generate conversations, and book qualified meetings with decision-makers.", 
+    short: "Multi-touch LinkedIn campaigns combining profile warming, outreach automation and social selling strategies.", 
+    long: "LinkedIn outreach systems designed to build familiarity, generate conversations and book qualified meetings with decision-makers.", 
     bullets: ["Sales Navigator targeting", "Multi-touch outreach sequences", "AI-assisted engagement", "Account-safe automation setup"] 
   },
   { 
     icon: Globe, 
     title: "Website Building", 
-    short: "Modern, conversion-focused websites engineered for credibility, SEO, speed, and lead generation.", 
-    long: "Premium B2B websites designed for conversion, credibility, speed, and lead generation across desktop and mobile.", 
+    short: "Modern, conversion-focused websites engineered for credibility, SEO, speed and lead generation.", 
+    long: "Premium B2B websites designed for conversion, credibility, speed and lead generation across desktop and mobile.", 
     bullets: ["Conversion-focused layouts", "SEO-ready structure", "CMS & analytics setup", "Fast, responsive performance"] 
   },
   { 
     icon: Bot, 
     title: "AI Automation", 
     short: "Custom AI workflows and operational automations designed to eliminate repetitive manual work across your business.", 
-    long: "Custom AI workflows and automations that streamline operations, improve lead handling, and eliminate repetitive manual work.", 
+    long: "Custom AI workflows and automations that streamline operations, improve lead handling and eliminate repetitive manual work.", 
     bullets: ["CRM automation", "AI lead scoring", "Automated follow-ups", "Workflow integrations with N8N & AI tools"] 
   },
 ];
@@ -69,11 +69,11 @@ function ServiceCard({ s, i, onOpen }: { s: typeof services[number]; i: number; 
     <motion.div
       onClick={onOpen}
       whileHover={{ y: -8 }}
-      className="relative group bg-[var(--beige-light)] rounded-3xl p-8 md:p-10 cursor-pointer border border-[var(--ink)]/5 hover:border-[var(--ink)]/20 shadow-soft transition-all duration-500 min-h-[380px] flex flex-col overflow-hidden"
+      className="relative group bg-[var(--beige-light)] rounded-3xl p-8 md:p-10 cursor-pointer border border-[var(--ink)]/5 hover:border-[var(--ink)]/20 shadow-soft transition-all duration-500 h-[380px] flex flex-col overflow-hidden"
     >
       <div className="absolute inset-0 bg-[var(--ink)] translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] z-0" />
       
-      <div className="relative z-10 flex-1 flex flex-col">
+      <div className="relative z-10 flex flex-col">
         <div className="flex items-center justify-between">
           <div className="text-[10px] uppercase tracking-[0.3em] text-[var(--ink-soft)] group-hover:text-[var(--beige-light)]/60 transition-colors duration-500">
             0{i + 1}
@@ -83,7 +83,7 @@ function ServiceCard({ s, i, onOpen }: { s: typeof services[number]; i: number; 
           </div>
         </div>
         
-        <div className="mt-auto">
+        <div className="mt-8">
           <div className="w-14 h-14 rounded-2xl bg-[var(--ink)] group-hover:bg-[var(--beige-light)] flex items-center justify-center text-[var(--beige-light)] group-hover:text-[var(--ink)] mb-8 transition-colors duration-500">
             <s.icon className="w-6 h-6" />
           </div>
@@ -119,12 +119,12 @@ function ServicesHero() {
         <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-6">◆ Capabilities</div>
         <h1 className="font-display text-[clamp(3rem,9vw,9rem)] leading-[1.2] md:leading-[1.1] text-[var(--ink)] font-light">
           <RevealText text="Everything you need" />
-          <br /><span className="italic"><RevealText text="to scale outbound growth." /></span>
+          <br /><span className="italic"><RevealText text="for predictable growth." /></span>
         </h1>
         <Reveal delay={0.4}>
           <p className="mt-10 max-w-2xl text-lg text-[var(--ink-soft)] leading-relaxed">
-            Apex RevOps combines outreach, appointment setting, automation, and conversion systems into one unified revenue engine. 
-            Every engagement is built around your market, offer, and growth goals.
+            Apex RevOps combines outreach, appointment setting, automation and conversion systems into one unified revenue engine. 
+            Every engagement is built around your market, offer and growth goals.
           </p>
         </Reveal>
       </div>

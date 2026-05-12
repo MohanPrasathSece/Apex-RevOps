@@ -36,13 +36,14 @@ export function Footer() {
             <h2 className="font-display text-4xl md:text-8xl leading-[0.9] text-[var(--beige-light)] font-light">
               Let's build<br /><span className="italic">your edge.</span>
             </h2>
-            <Link
-              to="/contact"
-              onClick={() => window.scrollTo(0, 0)}
+            <a
+              href="https://cal.com/rosh-chander/lead-gen?layout=mobile&overlayCalendar=true"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-10 px-7 py-4 rounded-full bg-[var(--beige-light)] text-[var(--ink)] font-medium hover:shadow-glow transition-shadow"
             >
               Schedule a meeting <ArrowUpRight className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
           <div className="md:col-span-2">
             <div className="text-[10px] uppercase tracking-[0.3em] opacity-50 mb-5">Quick Links</div>

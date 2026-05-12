@@ -1,8 +1,8 @@
 import { Reveal } from "../Reveal";
 
 const items = [
-  { q: "Apex rebuilt our outbound infrastructure and delivered qualified meetings within weeks. The process was clear, structured, and focused on results.", a: "VP Sales", r: "AI Company" },
-  { q: "The outreach felt personalized, professional, and highly targeted. We saw immediate improvements in conversations and pipeline quality.", a: "Founder", r: "Consulting Firm" },
+  { q: "Apex rebuilt our outbound infrastructure and delivered qualified meetings within weeks. The process was clear, structured and focused on results.", a: "VP Sales", r: "AI Company" },
+  { q: "The outreach felt personalized, professional and highly targeted. We saw immediate improvements in conversations and pipeline quality.", a: "Founder", r: "Consulting Firm" },
   { q: "The AI workflows and automation systems saved our team hours every week while improving lead handling and reporting.", a: "Head of Growth", r: "" },
 ];
 

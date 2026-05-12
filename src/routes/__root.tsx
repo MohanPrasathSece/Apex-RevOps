@@ -10,6 +10,7 @@ import { SmoothScroll } from "../components/SmoothScroll";
 import { PageIntro } from "../components/PageIntro";
 import { Cursor } from "../components/Cursor";
 import { CTA } from "../components/sections/CTA";
+import { StickyCTA } from "../components/StickyCTA";
 
 
 function NotFoundComponent() {
@@ -43,10 +44,10 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Apex RevOps · B2B Pipeline Generation & Outreach Automation" },
-      { name: "description", content: "We help B2B companies generate qualified meetings through LinkedIn outreach, cold email, cold calling, AI automation, and conversion-focused systems built for predictable growth." },
+      { name: "description", content: "We help businesses generate more revenue through outbound and inbound systems built for predictable growth." },
       { name: "author", content: "Apex RevOps" },
       { property: "og:title", content: "Apex RevOps · B2B Pipeline Generation & Outreach Automation" },
-      { property: "og:description", content: "Qualified meetings through LinkedIn, cold email, and AI automation." },
+      { property: "og:description", content: "Qualified meetings through LinkedIn, cold email and AI automation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -74,6 +75,7 @@ function RootComponent() {
       <CTA />
       <Footer />
       <ScrollToTop />
+      <StickyCTA />
     </>
   );
 }

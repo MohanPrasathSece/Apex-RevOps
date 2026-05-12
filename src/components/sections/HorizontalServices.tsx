@@ -8,7 +8,7 @@ const services = [
   { 
     icon: Target, 
     title: "Lead Generation", 
-    desc: "Hyper-targeted prospect research based on industry, company size, buying intent, and decision-maker behavior.",
+    desc: "Hyper-targeted prospect research based on industry, company size, buying intent and decision-maker behavior.",
   },
   { 
     icon: Calendar, 
@@ -23,17 +23,17 @@ const services = [
   { 
     icon: Linkedin, 
     title: "LinkedIn Outreach", 
-    desc: "Multi-touch LinkedIn campaigns combining profile warming, messaging, and automation for higher response rates.",
+    desc: "Multi-touch LinkedIn campaigns combining profile warming, messaging and automation for higher response rates.",
   },
   { 
     icon: Globe, 
     title: "Website Building", 
-    desc: "Modern, conversion-focused websites built for credibility, speed, and lead generation.",
+    desc: "Modern, conversion-focused websites built for credibility, speed and lead generation.",
   },
   { 
     icon: Bot, 
     title: "AI Automation", 
-    desc: "Custom AI workflows, CRM automation, reporting systems, and operational automations built around your business.",
+    desc: "Custom AI workflows, CRM automation, reporting systems and operational automations built around your business.",
   },
 ];
 
@@ -157,7 +157,7 @@ export function HorizontalServices() {
               A full-stack <br/><span className="italic">revenue engine.</span>
             </h2>
             <p className="mt-8 text-[var(--ink-soft)] max-w-2xl text-lg leading-relaxed">
-              We combine outbound systems, automation, and conversion-focused execution into one streamlined growth operation.
+              We combine outbound systems, automation and conversion-focused execution into one streamlined growth operation.
             </p>
           </Reveal>
           <motion.div 

@@ -17,19 +17,21 @@ export const Route = createFileRoute("/about")({
 });
 
 const timeline = [
-  { year: "2021", title: "Started with one goal", text: "Build outbound systems that create real conversations instead of generic spam campaigns." },
-  { year: "2022", title: "First repeatable outbound framework", text: "Launched multi-channel outreach systems combining LinkedIn, email, and appointment setting for B2B clients." },
-  { year: "2023", title: "Expansion into AI automation", text: "Introduced custom workflow automations, CRM systems, AI-powered lead handling, and operational automations." },
-  { year: "2024", title: "Scaled across industries", text: "Worked with MSPs, consultants, SaaS companies, cybersecurity firms, and agencies across the US, Canada, and Australia." },
-  { year: "2025", title: "Apex becomes a complete revenue partner", text: "Expanded from outreach execution into full outbound infrastructure, automation systems, websites, and white-label fulfillment." },
+  { year: "2020", title: "Start operations.", text: "Initial launch of Apex RevOps with focus on revenue generation systems." },
+  { year: "2021", title: "Initiated outbound systems", text: "Focused on creating real conversations instead of generic spam campaigns." },
+  { year: "2022", title: "Expansion into inbound channels", text: "Introduced SEO, paid advertising campaigns and inbound lead generation systems to support outbound growth channels." },
+  { year: "2023", title: "Expansion into AI automation", text: "Introduced AI automation systems and workflow infrastructure." },
+  { year: "2024", title: "Scaled across industries", text: "Worked with MSPs, consultants, SaaS companies, cybersecurity firms and agencies across the US, Canada and Australia." },
+  { year: "2025", title: "Omni-channel revenue partner", text: "Expanded from outreach execution into full outbound infrastructure, automation systems, websites and white-label fulfillment." },
+  { year: "2026", title: "Apex becomes revenue-focused", text: "No bloated agency retainers. If your product or service has strong market fit, we work on a revenue-share basis focused on measurable growth." },
 ];
 
 const values = [
-  { t: "Precision Over Volume", d: "Every campaign is built around a clearly defined ICP, personalized messaging, and channel-specific execution." },
-  { t: "Transparency by Default", d: "You see the same metrics, reporting, and campaign activity we see. No hidden processes or black-box delivery." },
-  { t: "Outcomes That Matter", d: "We focus on qualified meetings, pipeline growth, and real business opportunities — not vanity metrics." },
+  { t: "Precision Over Volume", d: "Every campaign is built around a clearly defined ICP, personalized messaging and channel-specific execution." },
+  { t: "Transparency by Default", d: "You see the same metrics, reporting and campaign activity we see. No hidden processes or black-box delivery." },
+  { t: "Outcomes That Matter", d: "We focus on qualified meetings, pipeline growth and real business opportunities - not vanity metrics." },
   { t: "Systems That Compound", d: "Our outreach and automation systems are designed for long-term scalability, not short-term spikes." },
-  { t: "Multi-Channel Execution", d: "LinkedIn outreach, cold email, appointment setting, and AI automation working together as one coordinated system." },
+  { t: "Multi-Channel Execution", d: "LinkedIn outreach, cold email, appointment setting and AI automation working together as one coordinated system." },
   { t: "Fast, Flexible Engagements", d: "Month-to-month partnerships with fast onboarding and no unnecessary long-term lock-ins." },
 ];
 
@@ -46,15 +48,15 @@ function AboutHero() {
         <h1 className="font-display text-[clamp(3rem,9vw,9rem)] leading-[0.9] text-[var(--ink)] font-light">
           <RevealText text="Revenue systems" />
           <br />
-          <span className="italic"><RevealText text="built for modern B2B growth." /></span>
+          <span className="italic"><RevealText text="built for actual growth." /></span>
         </h1>
         <motion.div style={{ y: y1 }} className="mt-12 grid md:grid-cols-12 gap-12">
           <Reveal delay={0.4} className="md:col-span-8 md:col-start-5">
             <p className="text-lg text-[var(--ink-soft)] leading-relaxed">
-              Apex RevOps helps B2B companies build predictable outbound pipeline through LinkedIn outreach, 
-              cold email, appointment setting, AI automation, and revenue-focused systems.
+              Apex RevOps helps businesses build predictable inbound and outbound pipeline through LinkedIn outreach, 
+              cold email, appointment setting, AI automation and revenue-focused systems.
               We work with a focused group of clients across SaaS, MSP, consulting, cybersecurity, 
-              fintech, and service industries, combining strategy, execution, and automation 
+              fintech and service industries, combining strategy, execution and automation 
               into one scalable growth engine.
             </p>
           </Reveal>
@@ -74,10 +76,10 @@ function ParallaxQuote() {
       <motion.div style={{ y }} className="relative max-w-5xl mx-auto text-center">
         <div className="text-[10px] uppercase tracking-[0.35em] opacity-50 mb-8">◆ Our Philosophy</div>
         <p className="font-display text-2xl md:text-5xl leading-[1.15] font-light">
-          We believe outbound growth should feel structured, relevant, and human. 
+          We believe growth should feel structured, relevant and human. 
           Mass outreach without strategy becomes noise. Strategy without execution produces no pipeline. 
-          Apex combines both through targeted systems, transparent processes, and consistent optimization. 
-          Every campaign is built around the right audience, the right messaging, and measurable outcomes.
+          We combine targeted systems, transparent processes and consistent optimization. 
+          Every campaign is built around the right audience, the right messaging and measurable outcomes.
         </p>
       </motion.div>
     </section>
@@ -96,7 +98,7 @@ function StickyNarrative() {
           <div className="md:sticky md:top-32">
             <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-4">◆ Why Apex</div>
             <h2 className="font-display text-5xl md:text-7xl text-[var(--ink)] leading-[0.95] font-light">
-              We treat <br /><span className="italic">your pipeline</span><br /> like our own.
+              We Treat <br /><span className="italic">Your Pipeline</span><br /> Like Our Own.
             </h2>
             <motion.div style={{ y }} className="mt-12 hidden md:block">
               <div className="w-32 h-32 rounded-full bg-[var(--ink)] opacity-20" />
@@ -173,12 +175,10 @@ function AboutPage() {
           <div className="md:col-span-7">
             <Reveal delay={0.2}>
               <p className="text-xl text-[var(--ink)] leading-relaxed">
-                Every engagement starts with onboarding, ICP definition, messaging approval, 
-                and infrastructure setup before outreach begins.
+                Every engagement starts with an intake form, onboarding, ICP definition, cadence approval and infrastructure setup before campaign goes live.
               </p>
               <p className="mt-8 text-[var(--ink-soft)] text-lg leading-relaxed">
-                From prospect sourcing and automation setup to campaign optimization and reply handling, 
-                every step follows a transparent process built for consistency and scale.
+                From data sourcing to automation setup to campaign optimization, every step follows a transparent process with actual human involvement, not generic AI slop.
               </p>
             </Reveal>
           </div>
@@ -190,8 +190,7 @@ function AboutPage() {
           <Reveal>
             <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-8">◆ Trusted By</div>
             <p className="text-lg md:text-2xl text-[var(--ink-soft)] leading-relaxed">
-              Apex supports growing SaaS companies, MSPs, consultants, agencies, cybersecurity firms, 
-              fintech brands, and service businesses looking for scalable outbound growth systems.
+              Apex supports growing SaaS, IT & Cybersecurity, Consulting, Investment Mergers & Acquisitions and service businesses looking for scalable systems for predictable revenue.
             </p>
           </Reveal>
         </div>

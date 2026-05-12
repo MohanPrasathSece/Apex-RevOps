@@ -5,9 +5,9 @@ import { Counter } from "../Counter";
 import { GlobeInteractive } from "../ui/cobe-globe-interactive";
 
 const metrics = [
-  { v: 400, s: "+", k: "Campaigns Shipped", note: "Outbound systems launched across SaaS, IT, consulting, AI, and service industries." },
-  { v: 150, s: "K+", k: "Personalized Outreach", note: "Multi-touch LinkedIn, cold email, and cold calling campaigns tailored to every ICP." },
-  { v: 300, s: "+", k: "Meetings Booked", note: "Qualified appointments booked directly with decision-makers." },
+  { v: 400, s: "+", k: "Campaigns Shipped", note: "Outbound systems launched across SaaS, IT, consulting, AI and service industries." },
+  { v: 150, s: "K+", k: "Personalized Outreach", note: "Multi-touch LinkedIn, cold email and cold calling campaigns tailored to every ICP." },
+  { v: 50, s: "M+", k: "Revenue Generated", note: "Revenue generated and influenced through outbound systems and pipeline growth." },
   { v: 98, s: "%", k: "Client Retention", note: "Long-term client partnerships built through transparent delivery and measurable results." },
 ];
 
@@ -19,9 +19,9 @@ export function Stats() {
 
   return (
     <section ref={ref} className="relative py-20 md:py-32 bg-[var(--beige-light)]">
-      {/* huge parallax word */}
+      {/* huge parallax word - removed */}
       <motion.div
-        style={{ y: wordY, willChange: "transform" }}
+        style={{ display: 'none' }}
         aria-hidden
         className="pointer-events-none absolute top-6 left-6 font-display italic text-[12vw] md:text-[10vw] leading-[0.85] text-ink opacity-5 whitespace-nowrap select-none"
       >

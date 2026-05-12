@@ -80,9 +80,9 @@ function ContactPage() {
             <div className="space-y-12 lg:sticky lg:top-32">
               <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--ink-soft)] mb-4">◆ Ready to scale?</div>
               <p className="text-[var(--ink-soft)] text-lg md:text-xl leading-relaxed max-w-md">
-                Whether you need LinkedIn outreach, cold email, appointment setting, or a complete outbound system, 
+                Whether you need LinkedIn outreach, cold email, appointment setting or a complete outbound system, 
                 we build scalable revenue engines designed for predictable growth. 
-                Tell us about your business and goals, and we’ll recommend the best outbound system for your market.
+                Tell us about your business and goals and we'll recommend the best outbound system for your market.
               </p>
               <div className="space-y-5">
                 {[
@@ -121,7 +121,7 @@ function ContactPage() {
                 Book a direct strategy session.
               </h2>
               <p className="text-[var(--ink-soft)] text-base md:text-lg mb-10 max-w-md mx-auto leading-relaxed">
-                Skip unnecessary back-and-forth. Schedule a discovery call to discuss your outreach goals, pipeline targets, automation opportunities, and revenue growth strategy.
+                Skip unnecessary back-and-forth. Schedule a discovery call to discuss your outreach goals, pipeline targets, automation opportunities and revenue growth strategy.
               </p>
               <div>
                 <a 
@@ -145,9 +145,9 @@ function ContactPage() {
           </Reveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { t: "Multi-Channel Outbound Systems", d: "LinkedIn outreach, cold email, appointment setting, and automation working together." },
+              { t: "Multi-Channel Outbound Systems", d: "LinkedIn outreach, cold email, appointment setting and automation working together." },
               { t: "Fast Campaign Launch", d: "Outbound systems launched quickly with structured onboarding and clear execution." },
-              { t: "Transparent Communication", d: "Dedicated Slack updates, reporting visibility, and collaborative workflows." },
+              { t: "Transparent Communication", d: "Dedicated Slack updates, reporting visibility and collaborative workflows." },
               { t: "No Long-Term Lock-In", d: "Flexible month-to-month engagements built around performance." },
             ].map((p, i) => (
               <Reveal key={i} delay={i * 0.1}>
