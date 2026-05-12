@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Phone } from "lucide-react";
 
 export function StickyCTA() {
   return (
@@ -16,9 +15,9 @@ export function StickyCTA() {
       }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-6 right-6 z-50 bg-[var(--ink)] text-[var(--beige-light)] p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+      className="fixed bottom-6 right-6 z-50 bg-[var(--ink)] text-[var(--beige-light)] px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group text-sm font-medium"
     >
-      <Phone className="w-5 h-5 group-hover:animate-pulse" />
+      Schedule a Meeting
     </motion.a>
   );
 }
