@@ -16,7 +16,7 @@ export function StickyCTA() {
       }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-6 left-6 z-50 bg-[var(--ink)] text-[var(--beige-light)] p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+      className="fixed bottom-6 right-6 z-50 bg-[var(--ink)] text-[var(--beige-light)] p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
     >
       <Phone className="w-5 h-5 group-hover:animate-pulse" />
     </motion.a>

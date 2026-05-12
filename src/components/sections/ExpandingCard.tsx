@@ -52,7 +52,7 @@ From LinkedIn automation to cold email and AI workflows, every process is engine
           <div className="md:col-span-5 grid grid-cols-2 gap-px bg-[var(--beige-light)]/10 rounded-2xl overflow-hidden">
             {[
               { k: "Clients Managed", v: "50+" },
-              { k: "Qualified Meetings/Campaign", v: "10 – 37+" },
+              { k: "Qualified Meetings/Campaign", v: "10 - 37+" },
               { k: "Ramp-Up Time", v: "72 Hours" },
               { k: "Lock-In Period", v: "0" },
             ].map((s) => (

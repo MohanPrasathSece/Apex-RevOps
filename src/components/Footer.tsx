@@ -82,7 +82,13 @@ export function Footer() {
         </motion.div>
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 text-[11px] opacity-50">
           <div>© 2026 Apex RevOps. All rights reserved.</div>
-          <div className="mt-3 md:mt-0">Built for revenue growth and scalable outbound systems.</div>
+          <div className="mt-3 md:mt-0">
+            <span>Built for revenue growth and scalable outbound systems.</span>
+            <span className="mx-2">•</span>
+            <a href="https://zyradigitals.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+              Design and Development by Zyra Digitals
+            </a>
+          </div>
         </div>
       </div>
     </footer>
