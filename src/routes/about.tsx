@@ -17,7 +17,7 @@ export const Route = createFileRoute("/about")({
 });
 
 const timeline = [
-  { year: "2020", title: "Start operations", text: "Initial launch of Apex RevOps with focus on revenue generation systems." },
+  { year: "2020", title: "Start Operations", text: "Initial launch of Apex RevOps with focus on revenue generation systems." },
   { year: "2021", title: "Initiated Outbound Systems", text: "Focused on creating real conversations instead of generic spam campaigns." },
   { year: "2022", title: "Expansion Into Inbound Channels", text: "Introduced SEO, paid advertising campaigns and inbound lead generation systems to support outbound growth channels." },
   { year: "2023", title: "Expansion Into AI Automation", text: "Introduced AI automation systems and workflow infrastructure." },
